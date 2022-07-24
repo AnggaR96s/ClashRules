@@ -65,7 +65,7 @@ proxies:
 # Vless WS
   - name: 🇮🇩 Atha
     type: vless
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
     udp: true
@@ -80,7 +80,7 @@ proxies:
 
   - name: 🇮🇩 Elastis
     type: vless
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
     udp: true
@@ -95,7 +95,7 @@ proxies:
 
   - name: 🇸🇬 Digital Ocean
     type: vless
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     uuid: c1446e03-a0de-481a-c988-7a14330e7baf
     udp: true
@@ -110,7 +110,7 @@ proxies:
 
   - name: 🇸🇬 Linode
     type: vless
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     uuid: 394664e5-127c-4ab6-fe18-c0eac2a85bca
     udp: true
@@ -126,7 +126,7 @@ proxies:
 # Shadowsocks 2022 Websocket & Trojan WS
   - name: Linode
     type: ss
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     cipher: 2022-blake3-aes-256-gcm
     password: mZTgllJlWusCcJDrgLWAcUEK2hVt2mRRTzE5AYFPtC1J
@@ -144,7 +144,7 @@ proxies:
 
   - name: Azure
     type: ss
-    server: 104.20.74.141
+    server: 172.67.199.34
     port: 80
     cipher: 2022-blake3-aes-256-gcm
     password: Jr1FbKafhVXkoFDhSYCg7t1ed9scEgepfbdcJACI2P6j
@@ -159,6 +159,62 @@ proxies:
       mux: false
       headers:
         custom: core.vpnws.site
+
+  - name: 🇮🇩 Argon
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 47b33c60-ee70-11ec-b6dd-1577c1651679
+    udp: true
+    sni: id-argontj.bypass.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: id-argontj.bypass.id
+
+  - name: 🇸🇬 GS
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 12f1c9a0-ee6f-11ec-839a-1577c1651679
+    udp: true
+    sni: sggs.bypass.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: sggs.bypass.id
+
+  - name: 🇸🇬 Contabo
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: eed7e600-ee6e-11ec-8da5-1577c1651679
+    udp: true
+    sni: trojan-contabo2.bypass.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: trojan-contabo2.bypass.id
+
+  - name: 🇮🇩 Sanggoro
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: ac0c21a0-ee6f-11ec-8822-1577c1651679
+    udp: true
+    sni: id-sanggoro.bypass.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: id-sanggoro.bypass.id
 
 proxy-groups:
   - name: 🗂️ Group
@@ -176,17 +232,25 @@ proxy-groups:
   - name: 📌 Select
     type: select
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
 
   - name: ♻️ Auto
     type: url-test
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
     tolerance: 150
     url: 'http://cp.cloudflare.com'
@@ -195,9 +259,13 @@ proxy-groups:
   - name: 📊 Load Balance
     type: load-balance
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
     url: 'http://cp.cloudflare.com'
     interval: 300
@@ -206,25 +274,37 @@ proxy-groups:
   - name: 📱 Sosmed
     type: select
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
 
   - name: 🎮 Gaming
     type: select
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
 
   - name: 🎞️ Streaming
     type: select
     proxies:
+      - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 Sanggoro
+      - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
       - 🇸🇬 Linode
 
   - name: SS2022-WS & TRWS
