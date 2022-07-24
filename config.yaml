@@ -1,0 +1,303 @@
+port: 8989
+socks-port: 1080
+mixed-port: 5555
+allow-lan: true
+bind-address: '*'
+ipv6: false
+mode: rule
+log-level: info
+geodata-mode: true
+tcp-concurrent: true
+
+sniffer:
+  enable: true
+  sniffing:
+    - tls
+    - http
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+  force-domain:
+    - '+.google.com'
+    - '+.cloudflare.com'
+    - '+.cloudflare.net'
+    - '+.cloudfront.net'
+  port-whitelist:
+    - 443
+    - 80
+    - 8000-9000
+
+tun:
+  enable: true
+  device: meta
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: false
+  auto-detect-interface: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:2323
+  default-nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+  use-hosts: true
+  enhanced-mode: redir-host
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - https://dns.google/dns-query
+    - tls://dns.google:853
+  fallback:
+    - 1.1.1.1
+    - 1.0.0.1
+    - https://dns.cloudflare.com/dns-query
+    - tls://1dot1dot1dot1.cloudflare-dns.com:853
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    geosite:
+      - gfw
+
+proxies:
+# Vless WS
+  - name: 🇮🇩 Atha
+    type: vless
+    server: 104.20.74.141
+    port: 80
+    uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
+    udp: true
+    tls: false
+    network: ws
+    servername: id-atha.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: id-atha.vpn-ws.com
+
+  - name: 🇮🇩 Elastis
+    type: vless
+    server: 104.20.74.141
+    port: 80
+    uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
+    udp: true
+    tls: false
+    network: ws
+    servername: cloud.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: cloud.vpn-ws.com
+
+  - name: 🇸🇬 Digital Ocean
+    type: vless
+    server: 104.20.74.141
+    port: 80
+    uuid: c1446e03-a0de-481a-c988-7a14330e7baf
+    udp: true
+    tls: false
+    network: ws
+    servername: sgd.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sgd.vpn-ws.com
+
+  - name: 🇸🇬 Linode
+    type: vless
+    server: 104.20.74.141
+    port: 80
+    uuid: 394664e5-127c-4ab6-fe18-c0eac2a85bca
+    udp: true
+    tls: false
+    network: ws
+    servername: sgp.vpn-ws.com
+    skip-cert-verify: true
+    ws-opts:
+      path: /vpnws
+      headers:
+        Host: sgp.vpn-ws.com
+
+# Shadowsocks 2022 Websocket & Trojan WS
+  - name: Linode
+    type: ss
+    server: 104.20.74.141
+    port: 80
+    cipher: 2022-blake3-aes-256-gcm
+    password: mZTgllJlWusCcJDrgLWAcUEK2hVt2mRRTzE5AYFPtC1J
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: xray.vpnws.site
+      tls: false
+      skip-cert-verify: true
+      path: "/vpnws"
+      mux: false
+      headers:
+        custom: xray.vpnws.site
+
+  - name: Azure
+    type: ss
+    server: 104.20.74.141
+    port: 80
+    cipher: 2022-blake3-aes-256-gcm
+    password: Jr1FbKafhVXkoFDhSYCg7t1ed9scEgepfbdcJACI2P6j
+    udp: true
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: core.vpnws.site
+      tls: false
+      skip-cert-verify: true
+      path: "/vpnws"
+      mux: false
+      headers:
+        custom: core.vpnws.site
+
+proxy-groups:
+  - name: 🗂️ Group
+    type: select
+    proxies:
+      - 📌 Select
+      - ♻️ Auto
+      - 📊 Load Balance
+      - 📱 Sosmed
+      - 🎮 Gaming
+      - 🎞️ Streaming
+      - SS2022-WS & TRWS
+      - DIRECT
+
+  - name: 📌 Select
+    type: select
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+
+  - name: ♻️ Auto
+    type: url-test
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+    tolerance: 150
+    url: 'http://cp.cloudflare.com'
+    interval: 300
+
+  - name: 📊 Load Balance
+    type: load-balance
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+    url: 'http://cp.cloudflare.com'
+    interval: 300
+    strategy: consistent-hashing # or round-robin
+
+  - name: 📱 Sosmed
+    type: select
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+
+  - name: 🎮 Gaming
+    type: select
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+
+  - name: 🎞️ Streaming
+    type: select
+    proxies:
+      - 🇮🇩 Atha
+      - 🇮🇩 Elastis
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 Linode
+
+  - name: SS2022-WS & TRWS
+    type: select
+    proxies:
+      - Linode
+      - Azure
+
+rule-providers:
+  ⛔ Adblock:
+    type: http
+    behavior: classical
+    path: ./Adblock.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml'
+    interval: 86300
+
+  ☢️ Anti-Hijack:
+    type: http
+    behavior: classical
+    path: ./Hijack.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
+    interval: 86300
+
+  LAN:
+    type: http
+    behavior: ipcidr
+    path: ./lan.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/lan.yaml'
+    interval: 86300
+
+  📱 Sosmed:
+    type: http
+    behavior: classical
+    path: ./sosmed.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
+    interval: 86300
+
+  🎞️ Streaming:
+    type: http
+    behavior: classical
+    path: ./streaming.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/streaming.yaml'
+    interval: 86300
+
+  🎮 Gaming:
+    type: http
+    behavior: classical
+    path: ./gaming.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/gaming.yaml'
+    interval: 86300
+
+rules:
+  - IN-TYPE,TUN,🗂️ Group
+  - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - GEOSITE,category-ads-all,REJECT
+  - DOMAIN,api2.branch.io,REJECT
+  - DOMAIN,vulcan.branch.io,REJECT
+  - DOMAIN,vulcan1.branch.io,REJECT
+  - DOMAIN,vulcan2.branch.io,REJECT
+  - DOMAIN,vulcan3.branch.io,REJECT
+  - DOMAIN,mtalk.google.com,REJECT
+  - DOMAIN,clients4.google.com,REJECT
+  - DOMAIN,clients3.google.com,REJECT
+  - DOMAIN,clients2.google.com,REJECT
+  - DOMAIN,clients1.google.com,REJECT
+  - DOMAIN,clients.google.com,REJECT
+  - DOMAIN,beacons5.gvt3.com,REJECT
+  - DOMAIN,mqtt-mini.facebook.com,REJECT
+  - DOMAIN,connect.facebook.net,REJECT
+  - RULE-SET,⛔ Adblock,REJECT,no-resolve 
+  - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
+  - RULE-SET,📱 Sosmed,📱 Sosmed
+  - RULE-SET,🎞️ Streaming,🎞️ Streaming 
+  - RULE-SET,🎮 Gaming,🎮 Gaming
+  - RULE-SET,LAN,DIRECT
+  - MATCH,🗂️ Group
