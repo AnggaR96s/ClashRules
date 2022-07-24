@@ -39,13 +39,13 @@ payload:
   - DOMAIN-SUFFIX,self.events.data.microsoft.com
   - DOMAIN-SUFFIX,nav.smartscreen.microsoft.com
   - DOMAIN-SUFFIX,edge.microsoft.com
-  
+
   # > RUANGGURU
   - DOMAIN-SUFFIX,ruangguru.com
   - DOMAIN-SUFFIX,belajar.ruangguru.com
   - DOMAIN-SUFFIX,midtrans.com
   - DOMAIN-SUFFIX,api.midtrans.com
-  
+
   # > ZOOM
   - DOMAIN-SUFFIX,zoom.us
   - DOMAIN-SUFFIX,google.zoom.us
@@ -107,13 +107,13 @@ payload:
   # PORTS
   - DST-PORT,19302
   - DST-PORT,19305
-  
+
   # > Microsoft Teams
   - DOMAIN,teams.events.data.microsoft.com
   - DOMAIN-SUFFIX,teams.cdn.live.net
   - DOMAIN-SUFFIX,teams.live.com
   - DOMAIN-SUFFIX,teams.microsoft.com
-  
+
   # > Campuran
   - DOMAIN-KEYWORD,zoom.us
   - DOMAIN-KEYWORD,meet.google.com
