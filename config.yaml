@@ -141,6 +141,21 @@ proxies:
       headers:
         Host: sgp.vpn-ws.com
 
+  - name: 🇸🇬 OVH
+    type: vless
+    server: 172.67.199.34
+    port: 443
+    uuid: 7687f86d-e121-4dbe-bb39-adf59deac173
+    udp: true
+    tls: true
+    network: ws
+    servername: sgovh1.v2vless.xyz
+    skip-cert-verify: true
+    ws-opts:
+      path: /vless
+      headers:
+        Host: sgovh1.v2vless.xyz
+
 # Shadowsocks 2022 Websocket & Trojan WS
   - name: Linode
     type: ss
@@ -288,6 +303,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
 
   - name: ♻️ Auto
     type: url-test
@@ -302,6 +318,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
     interval: 300
     tolerance: 50
@@ -319,6 +336,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
     interval: 300
     tolerance: 50
@@ -337,6 +355,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
 
   - name: 🎮 Gaming
     type: select
@@ -351,6 +370,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
 
   - name: 🎞️ Streaming
     type: url-test
@@ -365,6 +385,7 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+      - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
     interval: 300
     tolerance: 50
