@@ -216,6 +216,20 @@ proxies:
       headers:
         Host: id-sanggoro.bypass.id
 
+  - name: 🇮🇩 IKD
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 24caa5e0-0bc5-11ed-b089-1239d0255272
+    udp: true
+    sni: idtj-ikd.bonds.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: idtj-ikd.bonds.id
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -235,6 +249,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
@@ -247,6 +262,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
@@ -262,6 +278,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
@@ -277,6 +294,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
@@ -289,6 +307,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
@@ -301,6 +320,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Elastis
+      - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
