@@ -353,7 +353,7 @@ proxy-groups:
       - 🇸🇬 Linode
 
   - name: 🎞️ Streaming
-    type: select
+    type: url-test
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
@@ -365,6 +365,9 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    tolerance: 50
 
   - name: SS2022-WS & TRWS
     type: select
