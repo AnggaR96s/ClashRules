@@ -268,9 +268,9 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
-    tolerance: 150
-    url: 'http://cp.cloudflare.com'
+    url: 'http://hi.bonds.id/ping'
     interval: 300
+    tolerance: 50
 
   - name: 📊 Load Balance
     type: load-balance
@@ -284,9 +284,10 @@ proxy-groups:
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
-    url: 'http://cp.cloudflare.com'
+    url: 'http://hi.bonds.id/ping'
     interval: 300
-    strategy: consistent-hashing # or round-robin
+    tolerance: 50
+    strategy: round-robin # consistent-hashing  or round-robin
 
   - name: 📱 Sosmed
     type: select
