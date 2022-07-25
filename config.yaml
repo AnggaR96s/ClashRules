@@ -253,7 +253,7 @@ proxies:
     server: 172.67.199.34
     port: 443
     type: trojan
-    password: 24caa5e0-0bc5-11ed-b089-1239d0255272
+    password: 71f55510-0c71-11ed-b867-1239d0255272
     udp: true
     sni: idtj-ikd.bonds.id
     skip-cert-verify: true
@@ -352,8 +352,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
-    interval: 300
-    tolerance: 50
+    interval: 60
+    tolerance: 30
 
   - name: 📊 Load Balance
     type: load-balance
@@ -372,8 +372,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
-    interval: 300
-    tolerance: 50
+    interval: 60
+    tolerance: 30
     strategy: round-robin # consistent-hashing  or round-robin
 
   - name: 📱 Sosmed
@@ -427,8 +427,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://hi.bonds.id/ping'
-    interval: 300
-    tolerance: 50
+    interval: 60
+    tolerance: 30
 
   - name: SS2022-WS & TRWS
     type: select
