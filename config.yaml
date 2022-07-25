@@ -248,6 +248,20 @@ proxies:
       headers:
         Host: idtj-ikd.bonds.id
 
+  - name: 🇮🇩 Biznet
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 87847520-0c11-11ed-b997-1239d0255272
+    udp: true
+    sni: id5-trojan.bonds.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: id5-trojan.bonds.id
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -266,6 +280,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
@@ -279,6 +294,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
@@ -295,6 +311,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
@@ -312,6 +329,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
@@ -325,6 +343,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
@@ -338,6 +357,7 @@ proxy-groups:
     proxies:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
+      - 🇮🇩 Biznet
       - 🇮🇩 Elastis
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
