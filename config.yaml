@@ -277,6 +277,34 @@ proxies:
       headers:
         Host: id5-trojan.bonds.id
 
+  - name: 🇮🇩 Uninet
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: ac9dc3f0-0c6f-11ed-ac52-1239d0255272
+    udp: true
+    sni: idtj-uninet.bonds.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: idtj-uninet.bonds.id
+
+  - name: 🇮🇩 Game
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 68bfd030-d9bd-11ec-b4bc-1577c1651679
+    udp: true
+    sni: id-game.bypass.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: id-game.bypass.id
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -297,8 +325,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -312,8 +342,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -330,8 +362,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -349,8 +383,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -364,8 +400,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -379,8 +417,10 @@ proxy-groups:
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
       - 🇮🇩 Elastis
+      - 🇮🇩 Game
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
