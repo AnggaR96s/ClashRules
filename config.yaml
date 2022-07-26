@@ -391,6 +391,20 @@ proxies:
       headers:
         Host: trojan-contabo2.bypass.id
 
+  - name: 🇸🇬 HE
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 76cd5b90-0d3c-11ed-a3d6-1239d0255272
+    udp: true
+    sni: sg1-trojan.bonds.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: sg1-trojan.bonds.id
+
   - name: 🇮🇩 Sanggoro
     server: 172.67.199.34
     port: 443
@@ -506,6 +520,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
 
@@ -526,6 +541,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
@@ -550,6 +566,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
@@ -574,6 +591,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
 
@@ -594,6 +612,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
 
@@ -614,6 +633,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
@@ -627,6 +647,7 @@ proxy-groups:
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
+      - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
