@@ -403,9 +403,9 @@ proxy-groups:
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://cp.cloudflare.com'
-    interval: 60
-    tolerance: 30
+    url: 'http://captive.apple.com/generate_204'
+    interval: 30
+    tolerance: 10
     strategy: consistent-hashing
 
   - name: 📊 Load Balance
@@ -427,9 +427,9 @@ proxy-groups:
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://cp.cloudflare.com'
-    interval: 60
-    tolerance: 30
+    url: 'http://captive.apple.com/generate_204'
+    interval: 30
+    tolerance: 10
     strategy: consistent-hashing # consistent-hashing  or round-robin
 
   - name: 📱 Sosmed
@@ -491,9 +491,9 @@ proxy-groups:
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://cp.cloudflare.com'
-    interval: 60
-    tolerance: 30
+    url: 'http://captive.apple.com/generate_204'
+    interval: 30
+    tolerance: 10
     strategy: consistent-hashing
 
   - name: 🔐 Shadowsocks
@@ -563,10 +563,11 @@ rules:
   - DOMAIN,beacons5.gvt3.com,REJECT
   - DOMAIN,mqtt-mini.facebook.com,REJECT
   - DOMAIN,connect.facebook.net,REJECT
-  - RULE-SET,⛔ Adblock,REJECT,no-resolve 
+  - DOMAIN,ads.facebook.com,REJECT
+  - RULE-SET,⛔ Adblock,REJECT,no-resolve
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
   - RULE-SET,📱 Sosmed,📱 Sosmed
-  - RULE-SET,🎞️ Streaming,🎞️ Streaming 
+  - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
