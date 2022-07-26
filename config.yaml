@@ -363,6 +363,7 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
+      - 🤖 Telegram
       - 🔐 Shadowsocks
       - DIRECT
 
@@ -498,6 +499,19 @@ proxy-groups:
     tolerance: 10
     strategy: consistent-hashing
 
+  - name: 🤖 Telegram
+    type: url-test
+    proxies:
+      - 🇸🇬 Contabo
+      - 🇸🇬 Digital Ocean
+      - 🇸🇬 GS
+      - 🇸🇬 Linode
+      - 🇸🇬 OVH
+    url: 'http://captive.apple.com/generate_204'
+    interval: 30
+    tolerance: 10
+    strategy: consistent-hashing
+
   - name: 🔐 Shadowsocks
     type: select
     proxies:
@@ -547,6 +561,13 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/gaming.yaml'
     interval: 86300
 
+  🤖 Telegram:
+    type: http
+    behavior: classical
+    path: ./telegram.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/telegram.yaml'
+    interval: 86300
+
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -571,5 +592,6 @@ rules:
   - RULE-SET,📱 Sosmed,📱 Sosmed
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
+  - RULE-SET,🤖 Telegram,🤖 Telegram
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
