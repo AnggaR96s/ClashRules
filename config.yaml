@@ -189,7 +189,7 @@ proxies:
         Host: de-full.privateip.net
 
 # Shadowsocks 2022 Websocket & Trojan WS
-  - name: Linode
+  - name: 🛡️ Linode
     type: ss
     server: 172.67.199.34
     port: 80
@@ -207,7 +207,7 @@ proxies:
       headers:
         custom: xray.vpnws.site
 
-  - name: Azure
+  - name: 🛡️ Azure
     type: ss
     server: 172.67.199.34
     port: 80
@@ -309,6 +309,20 @@ proxies:
       headers:
         Host: id5-trojan.bonds.id
 
+  - name: 🇮🇩 BiznetJKT
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: c1717d40-0cc4-11ed-b391-1239d0255272
+    udp: true
+    sni: id2-trojan.bonds.id
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: "/howdy"
+      headers:
+        Host: id2-trojan.bonds.id
+
   - name: 🇮🇩 Uninet
     server: 172.67.199.34
     port: 443
@@ -347,7 +361,7 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
-      - SS2022-WS & TRWS
+      - 🔐 Shadowsocks
       - DIRECT
 
   - name: 📌 Select
@@ -356,6 +370,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -375,6 +390,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -398,6 +414,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -421,6 +438,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -440,6 +458,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -459,6 +478,7 @@ proxy-groups:
       - 🇮🇩 Argon
       - 🇮🇩 Atha
       - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
@@ -476,11 +496,11 @@ proxy-groups:
     tolerance: 30
     strategy: consistent-hashing
 
-  - name: SS2022-WS & TRWS
+  - name: 🔐 Shadowsocks
     type: select
     proxies:
-      - Linode
-      - Azure
+      - 🛡️ Linode
+      - 🛡️ Azure
 
 rule-providers:
   ⛔ Adblock:
