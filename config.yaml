@@ -111,6 +111,21 @@ proxies:
       headers:
         Host: cloud.vpn-ws.com
 
+  - name: 🇮🇩 Uninet 1
+    type: vless
+    server: 172.67.199.34
+    port: 443
+    uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
+    udp: true
+    tls: true
+    network: ws
+    servername: id-1.vless.co
+    skip-cert-verify: true
+    ws-opts:
+      path: "/fastssh/yvyvvyvy/62df2c74487c8/"
+      headers:
+        Host: id-1.vless.co
+
   - name: 🇸🇬 Digital Ocean
     type: vless
     server: 172.67.199.34
@@ -329,6 +344,7 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -346,14 +362,16 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://hi.bonds.id/ping'
+    url: 'http://cp.cloudflare.com'
     interval: 60
     tolerance: 30
+    strategy: consistent-hashing
 
   - name: 📊 Load Balance
     type: load-balance
@@ -366,15 +384,16 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://hi.bonds.id/ping'
+    url: 'http://cp.cloudflare.com'
     interval: 60
     tolerance: 30
-    strategy: round-robin # consistent-hashing  or round-robin
+    strategy: consistent-hashing # consistent-hashing  or round-robin
 
   - name: 📱 Sosmed
     type: select
@@ -387,6 +406,7 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -404,6 +424,7 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -421,14 +442,16 @@ proxy-groups:
       - 🇮🇩 IKD
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
       - 🇸🇬 Linode
       - 🇸🇬 OVH
-    url: 'http://hi.bonds.id/ping'
+    url: 'http://cp.cloudflare.com'
     interval: 60
     tolerance: 30
+    strategy: consistent-hashing
 
   - name: SS2022-WS & TRWS
     type: select
