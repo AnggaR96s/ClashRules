@@ -690,6 +690,27 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/telegram.yaml'
     interval: 86300
 
+  🚫 Basic-ADS:
+    type: http
+    behavior: domain
+    path: ./basicads.yaml
+    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml'
+    interval: 86300
+
+  🚫 Personal-ADS:
+    type: http
+    behavior: classical
+    path: ./personalads.yaml
+    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml'
+    interval: 86300
+
+  🚫 Hijacking:
+    type: http
+    behavior: classical
+    path: ./hijacking.yaml
+    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hijacking.yaml'
+    interval: 86300
+
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -715,5 +736,8 @@ rules:
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
   - RULE-SET,🤖 Telegram,🤖 Telegram
+  - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
+  - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
+  - RULE-SET,🚫 Hijacking,REJECT,no-resolve
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
