@@ -8,6 +8,7 @@ mode: rule
 log-level: info
 geodata-mode: true
 tcp-concurrent: true
+enable-process: true
 
 sniffer:
   enable: true
@@ -52,6 +53,7 @@ dns:
     - 8.8.4.4
     - https://dns.google/dns-query
     - tls://dns.google:853
+    - tls://doh.tiar.app
     - dhcp://eth0
     - dhcp://eth1
     - dhcp://eth2
