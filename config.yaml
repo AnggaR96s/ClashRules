@@ -312,43 +312,6 @@ proxies:
       headers:
         Host: de-full.privateip.net
 
-# Shadowsocks 2022 Websocket & Trojan WS
-  - name: 🛡️ Linode
-    type: ss
-    server: 172.67.199.34
-    port: 80
-    cipher: 2022-blake3-aes-256-gcm
-    password: mZTgllJlWusCcJDrgLWAcUEK2hVt2mRRTzE5AYFPtC1J
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: websocket
-      host: xray.vpnws.site
-      tls: false
-      skip-cert-verify: true
-      path: "/vpnws"
-      mux: false
-      headers:
-        custom: xray.vpnws.site
-
-  - name: 🛡️ Azure
-    type: ss
-    server: 172.67.199.34
-    port: 80
-    cipher: 2022-blake3-aes-256-gcm
-    password: Jr1FbKafhVXkoFDhSYCg7t1ed9scEgepfbdcJACI2P6j
-    udp: true
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: websocket
-      host: core.vpnws.site
-      tls: false
-      skip-cert-verify: true
-      path: "/vpnws"
-      mux: false
-      headers:
-        custom: core.vpnws.site
-
   - name: 🇮🇩 Argon
     server: 172.67.199.34
     port: 443
@@ -499,9 +462,6 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
-      - 🇮🇩
-      - 🇸🇬
-      - 🔐 Shadowsocks
       - DIRECT
 
   - name: 📌 Select
@@ -578,44 +538,14 @@ proxy-groups:
   - name: 📱 Sosmed
     type: select
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇩🇪 DO
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 🇮🇩 Indonesia
+      - 🇸🇬 Singapore
 
   - name: 🎮 Gaming
     type: select
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇩🇪 DO
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 🇮🇩 Indonesia
+      - 🇸🇬 Singapore
 
   - name: 🎞️ Streaming
     type: url-test
@@ -642,7 +572,7 @@ proxy-groups:
     tolerance: 30
     strategy: consistent-hashing
 
-  - name: 🇸🇬
+  - name: 🇸🇬 Singapore
     type: url-test
     proxies:
       - 🇸🇬 Contabo
@@ -656,7 +586,7 @@ proxy-groups:
     tolerance: 30
     strategy: consistent-hashing
 
-  - name: 🇮🇩
+  - name: 🇮🇩 Indonesia
     type: url-test
     proxies:
       - 🇮🇩 Argon
@@ -673,12 +603,6 @@ proxy-groups:
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
-
-  - name: 🔐 Shadowsocks
-    type: select
-    proxies:
-      - 🛡️ Linode
-      - 🛡️ Azure
 
 rule-providers:
   ⛔ Adblock:
@@ -775,9 +699,9 @@ rules:
   - RULE-SET,📱 Sosmed,📱 Sosmed
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
-  - RULE-SET,🤖 Telegram,🇸🇬
+  - RULE-SET,🤖 Telegram,🇸🇬 Singapore
   - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
   - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
-  - RULE-SET,🔒 Personal,🇮🇩
+  - RULE-SET,🔒 Personal,🇮🇩 Indonesia
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
