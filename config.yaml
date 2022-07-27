@@ -725,13 +725,6 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml'
     interval: 86300
 
-  🚫 Hijacking:
-    type: http
-    behavior: classical
-    path: ./hijacking.yaml
-    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_hijacking.yaml'
-    interval: 86300
-
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -759,6 +752,5 @@ rules:
   - RULE-SET,🤖 Telegram,🤖 Telegram
   - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
   - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
-  - RULE-SET,🚫 Hijacking,REJECT,no-resolve
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
