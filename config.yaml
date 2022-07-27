@@ -545,8 +545,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
-    interval: 30
-    tolerance: 10
+    interval: 150
+    tolerance: 30
     strategy: consistent-hashing
 
   - name: 📊 Load Balance
@@ -570,8 +570,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
-    interval: 30
-    tolerance: 10
+    interval: 150
+    tolerance: 30
     strategy: consistent-hashing # consistent-hashing  or round-robin
 
   - name: 📱 Sosmed
@@ -637,8 +637,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
-    interval: 30
-    tolerance: 10
+    interval: 150
+    tolerance: 30
     strategy: consistent-hashing
 
   - name: 🤖 Telegram
@@ -651,8 +651,8 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 OVH
     url: 'http://captive.apple.com/generate_204'
-    interval: 30
-    tolerance: 10
+    interval: 150
+    tolerance: 30
     strategy: consistent-hashing
 
   - name: 🔐 Shadowsocks
