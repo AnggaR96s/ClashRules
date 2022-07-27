@@ -452,6 +452,20 @@ proxies:
       headers:
         Host: id-game.bypass.id
 
+  - name: 🇮🇩 Linkgo
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: f9648b81-001f-4c4b-aae4-579289b0546b
+    skip-cert-verify: true
+    sni: idt1.sshocean.net
+    network: ws
+    ws-opts:
+      path: /websocket
+      headers:
+        Host: idt1.sshocean.net
+    udp: true
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -474,6 +488,7 @@ proxy-groups:
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
+      - 🇮🇩 Linkgo
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
@@ -495,6 +510,7 @@ proxy-groups:
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
+      - 🇮🇩 Linkgo
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
@@ -520,6 +536,7 @@ proxy-groups:
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
+      - 🇮🇩 Linkgo
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
@@ -550,23 +567,9 @@ proxy-groups:
   - name: 🎞️ Streaming
     type: url-test
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
+      - 🇮🇩 Indonesia
       - 🇩🇪 DO
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 🇸🇬 Singapore
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -596,6 +599,7 @@ proxy-groups:
       - 🇮🇩 Elastis
       - 🇮🇩 Game
       - 🇮🇩 IKD
+      - 🇮🇩 Linkgo
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
