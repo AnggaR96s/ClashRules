@@ -1,0 +1,11 @@
+payload:
+  - DOMAIN-SUFFIX,pojokmanga.com
+  - DOMAIN-SUFFIX,howdy.id
+  - DOMAIN-SUFFIX,fastssh.com
+  - DOMAIN-SUFFIX,sshocean.com
+  - DOMAIN-SUFFIX,sshkit.com
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,gitlab.com
+  - DOMAIN-SUFFIX,angga.social
+  - DOMAIN-SUFFIX,workers.dev
+  - PROCESS-NAME,com.termux

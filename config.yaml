@@ -641,7 +641,7 @@ proxy-groups:
     tolerance: 30
     strategy: consistent-hashing
 
-  - name: 🤖 Telegram
+  - name: 🇸🇬
     type: url-test
     proxies:
       - 🇸🇬 Contabo
@@ -650,6 +650,24 @@ proxy-groups:
       - 🇸🇬 HE
       - 🇸🇬 Linode
       - 🇸🇬 OVH
+    url: 'http://captive.apple.com/generate_204'
+    interval: 150
+    tolerance: 30
+    strategy: consistent-hashing
+
+  - name: 🇮🇩
+    type: url-test
+    proxies:
+      - 🇮🇩 Argon
+      - 🇮🇩 Atha
+      - 🇮🇩 Biznet
+      - 🇮🇩 BiznetJKT
+      - 🇮🇩 Elastis
+      - 🇮🇩 Game
+      - 🇮🇩 IKD
+      - 🇮🇩 Sanggoro
+      - 🇮🇩 Uninet
+      - 🇮🇩 Uninet 1
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -725,6 +743,13 @@ rule-providers:
     url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml'
     interval: 86300
 
+  🔒 Personal:
+    type: http
+    behavior: classical
+    path: ./personal.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/personal.yaml'
+    interval: 86300
+
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -749,8 +774,9 @@ rules:
   - RULE-SET,📱 Sosmed,📱 Sosmed
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
-  - RULE-SET,🤖 Telegram,🤖 Telegram
+  - RULE-SET,🤖 Telegram,🇸🇬
   - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
   - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
+  - RULE-SET,🔒 Personal,🇮🇩
   - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group
