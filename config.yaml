@@ -297,21 +297,6 @@ proxies:
       headers:
         Host: sgovh1.v2vless.xyz
 
-  - name: 🇩🇪 DO
-    type: vless
-    server: 172.67.199.34
-    port: 443
-    uuid: 4985cfda-b74a-448c-9bb7-1cada3a39cd5
-    udp: true
-    tls: true
-    network: ws
-    servername: de-full.privateip.net
-    skip-cert-verify: true
-    ws-opts:
-      path: /vless
-      headers:
-        Host: de-full.privateip.net
-
   - name: 🇮🇩 Argon
     server: 172.67.199.34
     port: 443
@@ -492,7 +477,6 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
-      - 🇩🇪 DO
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -514,7 +498,6 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
-      - 🇩🇪 DO
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -540,7 +523,6 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
-      - 🇩🇪 DO
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -568,7 +550,6 @@ proxy-groups:
     type: url-test
     proxies:
       - 🇮🇩 Indonesia
-      - 🇩🇪 DO
       - 🇸🇬 Singapore
     url: 'http://captive.apple.com/generate_204'
     interval: 150
