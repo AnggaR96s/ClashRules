@@ -564,14 +564,10 @@ proxy-groups:
       - 🇸🇬 Singapore
 
   - name: 🎞️ Streaming
-    type: url-test
+    type: select
     proxies:
       - 🇮🇩 Indonesia
       - 🇸🇬 Singapore
-    url: 'http://captive.apple.com/generate_204'
-    interval: 150
-    tolerance: 30
-    strategy: consistent-hashing
 
   - name: 🇸🇬 Singapore
     type: url-test
