@@ -451,6 +451,20 @@ proxies:
         Host: idt1.sshocean.net
     udp: true
 
+  - name: 🇸🇬 0708
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 1622e080-10de-11ed-8f87-1239d0255272
+    skip-cert-verify: true
+    sni: trojan3.udpgw.com
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: trojan3.udpgw.com
+    udp: true
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -477,6 +491,7 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
+      - 🇸🇬 0708
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -498,6 +513,7 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
+      - 🇸🇬 0708
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -523,6 +539,7 @@ proxy-groups:
       - 🇮🇩 Sanggoro
       - 🇮🇩 Uninet
       - 🇮🇩 Uninet 1
+      - 🇸🇬 0708
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
@@ -559,6 +576,7 @@ proxy-groups:
   - name: 🇸🇬 Singapore
     type: url-test
     proxies:
+      - 🇸🇬 0708
       - 🇸🇬 Contabo
       - 🇸🇬 Digital Ocean
       - 🇸🇬 GS
