@@ -54,3 +54,17 @@ proxies:
       headers:
         Host: elastic-ws.metavpnws.web.id
     udp: true
+
+  - name: IKD
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 858b2270-1512-11ed-959e-1239d0255272
+    skip-cert-verify: true
+    sni: idtj-ikd.bonds.id
+    network: ws
+    ws-opts: 
+      path: /howdy
+      headers: 
+        Host: idtj-ikd.bonds.id
+    udp: true
