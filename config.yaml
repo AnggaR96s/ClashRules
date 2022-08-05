@@ -205,6 +205,24 @@ tun:
   auto-route: false
   auto-detect-interface: false
 
+proxy-providers:
+  ID:
+  type: http
+  path: ./id.yaml
+  url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/id.yaml"
+  health-check:
+    enable: true
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: 1200
+
+  SG:
+  type: http
+  path: ./sg.yaml
+  url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/sg.yaml"
+  health-check:
+    enable: true
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: 1200
 
 proxy-groups:
   - name: 🗂️ Group
@@ -221,12 +239,14 @@ proxy-groups:
   - name: 📌 Select
     type: select
     proxies:
-      - 
+      - ID
+      - SG
 
   - name: ♻️ Auto
     type: url-test
     proxies:
-      - 
+      - ID
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -235,7 +255,8 @@ proxy-groups:
   - name: 📊 Load Balance
     type: load-balance
     proxies:
-      - 
+      - ID
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -244,22 +265,25 @@ proxy-groups:
   - name: 📱 Sosmed
     type: select
     proxies:
-      - 
+      - ID
+      - SG
 
   - name: 🎮 Gaming
     type: select
     proxies:
-      - 
+      - ID
+      - SG
 
   - name: 🎞️ Streaming
     type: select
     proxies:
-      - 
+      - ID
+      - SG
 
   - name: Singapore
     type: url-test
     proxies:
-      - 
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -268,7 +292,7 @@ proxy-groups:
   - name: Indonesia
     type: url-test
     proxies:
-      - 
+      - ID
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
