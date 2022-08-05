@@ -1,0 +1,56 @@
+proxies:
+  - name: Apik
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: JOMTveoNqD
+    skip-cert-verify: true
+    sni: apik-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: apik-ws.metavpnws.web.id
+    udp: true
+
+  - name: Host
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 6ZgsENmKeU
+    skip-cert-verify: true
+    sni: host-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: host-ws.metavpnws.web.id
+    udp: true
+
+  - name: Cloud
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: PJDpqUzTbs
+    skip-cert-verify: true
+    sni: cloud-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: cloud-ws.metavpnws.web.id
+    udp: true
+
+  - name: Elastic
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: R3IWivmqAl
+    skip-cert-verify: true
+    sni: elastic-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: elastic-ws.metavpnws.web.id
+    udp: true
