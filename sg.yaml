@@ -26,3 +26,17 @@ proxies:
       headers:
         Host: linode-ws.metavpnws.web.id
     udp: true
+
+- name: weekly
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: c8e9fd80-1510-11ed-979f-1239d0255272
+    skip-cert-verify: true
+    sni: trojan3.udpgw.com
+    network: ws
+    ws-opts: 
+      path: /howdy
+      headers: 
+        Host: trojan3.udpgw.com
+    udp: true
