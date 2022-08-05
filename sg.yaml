@@ -1,0 +1,28 @@
+proxies:
+  - name: Azure
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: XSAd6QlRYm
+    skip-cert-verify: true
+    sni: azure-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: azure-ws.metavpnws.web.id
+    udp: true
+
+  - name: Linode
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 1JYyUetIk5
+    skip-cert-verify: true
+    sni: linode-ws.metavpnws.web.id
+    network: ws
+    ws-opts:
+      path: /meta-vpnws
+      headers:
+        Host: linode-ws.metavpnws.web.id
+    udp: true
