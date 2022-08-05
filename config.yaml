@@ -205,265 +205,6 @@ tun:
   auto-route: false
   auto-detect-interface: false
 
-proxies:
-# Vless WS
-  - name: 🇮🇩 Atha
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
-    udp: true
-    tls: false
-    network: ws
-    servername: id-atha.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: id-atha.vpn-ws.com
-
-  - name: 🇮🇩 Elastis
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
-    udp: true
-    tls: false
-    network: ws
-    servername: cloud.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: cloud.vpn-ws.com
-
-  - name: 🇮🇩 Uninet 1
-    type: vless
-    server: 172.67.199.34
-    port: 443
-    uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
-    udp: true
-    tls: true
-    network: ws
-    servername: id-1.vless.co
-    skip-cert-verify: true
-    ws-opts:
-      path: "/fastssh/yvyvvyvy/62df2c74487c8/"
-      headers:
-        Host: id-1.vless.co
-
-  - name: 🇸🇬 Digital Ocean
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: c1446e03-a0de-481a-c988-7a14330e7baf
-    udp: true
-    tls: false
-    network: ws
-    servername: sgd.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sgd.vpn-ws.com
-
-  - name: 🇸🇬 Linode
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 394664e5-127c-4ab6-fe18-c0eac2a85bca
-    udp: true
-    tls: false
-    network: ws
-    servername: sgp.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sgp.vpn-ws.com
-
-  - name: 🇸🇬 OVH
-    type: vless
-    server: 172.67.199.34
-    port: 443
-    uuid: 7687f86d-e121-4dbe-bb39-adf59deac173
-    udp: true
-    tls: true
-    network: ws
-    servername: sgovh1.v2vless.xyz
-    skip-cert-verify: true
-    ws-opts:
-      path: /vless
-      headers:
-        Host: sgovh1.v2vless.xyz
-
-  - name: 🇮🇩 Argon
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 47b33c60-ee70-11ec-b6dd-1577c1651679
-    udp: true
-    sni: id-argontj.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-argontj.bypass.id
-
-  - name: 🇸🇬 GS
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 12f1c9a0-ee6f-11ec-839a-1577c1651679
-    udp: true
-    sni: sggs.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: sggs.bypass.id
-
-  - name: 🇸🇬 Contabo
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: eed7e600-ee6e-11ec-8da5-1577c1651679
-    udp: true
-    sni: trojan-contabo2.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: trojan-contabo2.bypass.id
-
-  - name: 🇸🇬 HE
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 76cd5b90-0d3c-11ed-a3d6-1239d0255272
-    udp: true
-    sni: sg1-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: sg1-trojan.bonds.id
-
-  - name: 🇮🇩 Sanggoro
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: ac0c21a0-ee6f-11ec-8822-1577c1651679
-    udp: true
-    sni: id-sanggoro.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-sanggoro.bypass.id
-
-  - name: 🇮🇩 IKD
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 71f55510-0c71-11ed-b867-1239d0255272
-    udp: true
-    sni: idtj-ikd.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: idtj-ikd.bonds.id
-
-  - name: 🇮🇩 Biznet
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 87847520-0c11-11ed-b997-1239d0255272
-    udp: true
-    sni: id5-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id5-trojan.bonds.id
-
-  - name: 🇮🇩 BiznetJKT
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: c1717d40-0cc4-11ed-b391-1239d0255272
-    udp: true
-    sni: id2-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id2-trojan.bonds.id
-
-  - name: 🇮🇩 Uninet
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: ac9dc3f0-0c6f-11ed-ac52-1239d0255272
-    udp: true
-    sni: idtj-uninet.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: idtj-uninet.bonds.id
-
-  - name: 🇮🇩 Game
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 68bfd030-d9bd-11ec-b4bc-1577c1651679
-    udp: true
-    sni: id-game.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-game.bypass.id
-
-  - name: 🇮🇩 Linkgo
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: f9648b81-001f-4c4b-aae4-579289b0546b
-    skip-cert-verify: true
-    sni: idt1.sshocean.net
-    network: ws
-    ws-opts:
-      path: /websocket
-      headers:
-        Host: idt1.sshocean.net
-    udp: true
-
-  - name: 🇸🇬 0708
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 1622e080-10de-11ed-8f87-1239d0255272
-    skip-cert-verify: true
-    sni: trojan3.udpgw.com
-    network: ws
-    ws-opts:
-      path: /howdy
-      headers:
-        Host: trojan3.udpgw.com
-    udp: true
 
 proxy-groups:
   - name: 🗂️ Group
@@ -480,46 +221,12 @@ proxy-groups:
   - name: 📌 Select
     type: select
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 
 
   - name: ♻️ Auto
     type: url-test
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -528,24 +235,7 @@ proxy-groups:
   - name: 📊 Load Balance
     type: load-balance
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
@@ -554,50 +244,31 @@ proxy-groups:
   - name: 📱 Sosmed
     type: select
     proxies:
-      - 🇮🇩 Indonesia
-      - 🇸🇬 Singapore
+      - 
 
   - name: 🎮 Gaming
     type: select
     proxies:
-      - 🇮🇩 Indonesia
-      - 🇸🇬 Singapore
+      - 
 
   - name: 🎞️ Streaming
     type: select
     proxies:
-      - 🇮🇩 Indonesia
-      - 🇸🇬 Singapore
+      - 
 
-  - name: 🇸🇬 Singapore
+  - name: Singapore
     type: url-test
     proxies:
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+      - 
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
 
-  - name: 🇮🇩 Indonesia
+  - name: Indonesia
     type: url-test
     proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
+      - 
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
