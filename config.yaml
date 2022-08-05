@@ -210,19 +210,11 @@ proxy-providers:
   type: http
   path: ./id.yaml
   url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/id.yaml"
-  health-check:
-    enable: true
-    url: 'http://cp.cloudflare.com/generate_204'
-    interval: 1200
 
   SG:
   type: http
   path: ./sg.yaml
   url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/sg.yaml"
-  health-check:
-    enable: true
-    url: 'http://cp.cloudflare.com/generate_204'
-    interval: 1200
 
 proxy-groups:
   - name: 🗂️ Group
