@@ -1,0 +1,229 @@
+tproxy-port: 9898
+mode: rule
+allow-lan: true
+unified-delay: true
+bind-address: '*'
+log-level: silent
+ipv6: true
+geodata-mode: false
+external-controller: 0.0.0.0:9090
+external-ui: dashboard/dist
+tcp-concurrent: true
+interface-name: ""
+enable-process: true
+geodata-loader: memconservative
+inbound-tfo: true
+secret: ""
+profile:
+  store-selected: true
+  store-fake-ip: false
+geox-url: {mmdb: "https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb", geoip: "https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat", geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat"}
+experimental:
+  sniff-tls-sni: true
+dns:
+  enable: true
+  device: Meta
+  ipv6: false
+  prefer-h3: false #start DOH to use http/3 first
+  default-nameserver:
+    - 1.1.1.1
+    - 9.9.9.9
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter: ['networktest.twilio.com', '+.twilio.com', 'connect.rom.miui.com', '+.msftnsci.com', '+.msftconnecttest.com', '+.gstatic.com', '+.stun.*.*', '+.stun.*.*.*', '+.stun.*.*.*.*', '+.time.*', '+.time.*.*', '+.time.*.*.*', '+.ntp.*', '+.ntp.*.*', '+.ntp.*.*.*']
+  nameserver:
+    - 172.67.199.34
+    - tls://dns.quad9.net
+    - https://1.1.1.1/dns-query
+  fallback: []
+  fallback-filter:
+    geoip: false
+    geoip-code: "ID"
+    geosite: []
+    ipcidr: []
+    domain: ['+.google.com', '+.facebook.com', '+.youtube.com', '+.githubusercontent.com', '+.googlevideo.com']
+tun:
+  enable: false
+  stack: system
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  auto-route: false
+  auto-detect-interface: false
+auto-redir:
+   enable: false
+   auto-route: false
+sniffer:
+  enable: false
+  sniffing: ['tls', 'http']
+  force-domain: ['+']
+  skip-domain: ['+.google.com']
+  port-whitelist: ['443', '80']
+proxies:
+proxy-groups:
+  - name: 🗂️ Group
+    type: select
+    proxies:
+      - 📌 Select
+      - ♻️ Auto
+      - 📊 Load Balance
+      - 📱 Sosmed
+      - 🎮 Gaming
+      - 🎞️ Streaming
+      - DIRECT
+  - name: 📌 Select
+    type: select
+    use:
+      - ID
+      - SG
+  - name: ♻️ Auto
+    type: url-test
+    use:
+      - ID
+      - SG
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 150
+    tolerance: 30
+    strategy: consistent-hashing
+  - name: 📊 Load Balance
+    type: load-balance
+    use:
+      - ID
+      - SG
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 150
+    tolerance: 30
+    strategy: consistent-hashing # consistent-hashing  or round-robin
+  - name: 📱 Sosmed
+    type: select
+    use:
+      - ID
+      - SG
+  - name: 🎮 Gaming
+    type: select
+    use:
+      - ID
+      - SG
+  - name: 🎞️ Streaming
+    type: select
+    use:
+      - ID
+      - SG
+  - name: Singapore
+    type: url-test
+    use:
+      - SG
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 150
+    tolerance: 30
+    strategy: consistent-hashing
+  - name: Indonesia
+    type: url-test
+    use:
+      - ID
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 150
+    tolerance: 30
+    strategy: consistent-hashing
+proxy-providers:
+  ID:
+    type: http
+    path: ./id.yaml
+    url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/id.yaml"
+  SG:
+    type: http
+    path: ./sg.yaml
+    url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/test/sg.yaml"
+rule-providers:
+  ⛔ Adblock:
+    type: http
+    behavior: classical
+    path: ./Adblock.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml'
+    interval: 86300
+  ☢️ Anti-Hijack:
+    type: http
+    behavior: classical
+    path: ./Hijack.yaml
+    url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
+    interval: 86300
+  🌏 LAN:
+    type: http
+    behavior: ipcidr
+    path: ./lan.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/lan.yaml'
+    interval: 86300
+  📱 Sosmed:
+    type: http
+    behavior: classical
+    path: ./sosmed.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
+    interval: 86300
+  🎞️ Streaming:
+    type: http
+    behavior: classical
+    path: ./streaming.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/streaming.yaml'
+    interval: 86300
+  🎮 Gaming:
+    type: http
+    behavior: classical
+    path: ./gaming.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/gaming.yaml'
+    interval: 86300
+  🤖 Telegram:
+    type: http
+    behavior: classical
+    path: ./telegram.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/telegram.yaml'
+    interval: 86300
+  🚫 Basic-ADS:
+    type: http
+    behavior: domain
+    path: ./basicads.yaml
+    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml'
+    interval: 86300
+  🚫 Personal-ADS:
+    type: http
+    behavior: classical
+    path: ./personalads.yaml
+    url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml'
+    interval: 86300
+  🔒 Personal:
+    type: http
+    behavior: classical
+    path: ./personal.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/personal.yaml'
+    interval: 86300
+rules:
+  - IN-TYPE,TUN,🗂️ Group
+  - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - GEOSITE,category-ads-all,REJECT
+  - DOMAIN,api2.branch.io,REJECT
+  - DOMAIN,vulcan.branch.io,REJECT
+  - DOMAIN,vulcan1.branch.io,REJECT
+  - DOMAIN,vulcan2.branch.io,REJECT
+  - DOMAIN,vulcan3.branch.io,REJECT
+  - DOMAIN,mtalk.google.com,REJECT
+  - DOMAIN,clients4.google.com,REJECT
+  - DOMAIN,clients3.google.com,REJECT
+  - DOMAIN,clients2.google.com,REJECT
+  - DOMAIN,clients1.google.com,REJECT
+  - DOMAIN,clients.google.com,REJECT
+  - DOMAIN,beacons5.gvt3.com,REJECT
+  - DOMAIN,mqtt-mini.facebook.com,REJECT
+  - DOMAIN,connect.facebook.net,REJECT
+  - DOMAIN,ads.facebook.com,REJECT
+  - RULE-SET,⛔ Adblock,REJECT,no-resolve
+  - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
+  - RULE-SET,📱 Sosmed,📱 Sosmed
+  - RULE-SET,🎞️ Streaming,🎞️ Streaming
+  - RULE-SET,🎮 Gaming,🎮 Gaming
+  - RULE-SET,🤖 Telegram,Singapore
+  - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
+  - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
+  - RULE-SET,🔒 Personal,Indonesia
+  - RULE-SET,🌏 LAN,DIRECT
+  - MATCH,🗂️ Group
