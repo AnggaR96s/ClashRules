@@ -47,7 +47,7 @@ proxies:
     sni: nusa.kencang.my.id
     network: ws
     ws-opts:
-      path: /howdy
+      path: /trojan
       headers:
         Host: nusa.kencang.my.id
     udp: true
