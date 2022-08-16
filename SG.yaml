@@ -73,7 +73,7 @@ proxies:
   sni: sgtr-prem.premiumvip.tech
   network: ws
   ws-opts: 
-    path: /howdy
+    path: /trojan
     headers: 
       Host: sgtr-prem.premiumvip.tech
   udp: true
