@@ -1,0 +1,66 @@
+proxies:
+- name: 🇸🇬 UDPGW
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
+  skip-cert-verify: true
+  sni: sg8-trojan.bonds.id
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sg8-trojan.bonds.id
+  udp: true
+- name: 🇸🇬 HE3
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: cc577400-1d9a-11ed-86ab-1239d0255272
+  skip-cert-verify: true
+  sni: sg3-trojan.bonds.id
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sg3-trojan.bonds.id
+  udp: true
+- name: 🇸🇬 HEMUX
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: ea4fa5a0-1d9a-11ed-8594-1239d0255272
+  skip-cert-verify: true
+  sni: sg6-trojan.bonds.id
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sg6-trojan.bonds.id
+  udp: true
+- name: 🇸🇬 HE1
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: 22bc9940-1d9b-11ed-a427-1239d0255272
+  skip-cert-verify: true
+  sni: sg1-trojan.bonds.id
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sg1-trojan.bonds.id
+  udp: true
+- name: 🇸🇬 OVH
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: 4d515ac0-1d9b-11ed-83a7-1239d0255272
+  skip-cert-verify: true
+  sni: sgovh-trojan.bonds.id
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sgovh-trojan.bonds.id
+  udp: true

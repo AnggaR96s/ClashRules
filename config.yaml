@@ -1,470 +1,98 @@
-port: 8989
-socks-port: 1080
-mixed-port: 5555
-allow-lan: true
-bind-address: '*'
-ipv6: true
 mode: rule
-log-level: info
+allow-lan: true
+unified-delay: true
+bind-address: '*'
+log-level: silent
+ipv6: true
 geodata-mode: true
+external-controller: 0.0.0.0:9090
+external-ui: dashboard/dist
 tcp-concurrent: true
+interface-name: ""
 enable-process: true
-
+geodata-loader: memconservative
+inbound-tfo: false
+secret: ""
+profile:
+  store-selected: true
+  store-fake-ip: false
+geox-url: {mmdb: "https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb", geoip: "https://github.com/v2fly/geoip/releases/latest/download/geoip-only-cn-private.dat", geosite: "https://github.com/taamarin/v2ray-rules-dat/raw/release/geosite.dat"}
+tun:
+  enable: false
+  stack: gvisor
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
 sniffer:
   enable: true
   sniffing:
     - tls
     - http
-  skip-domain:
-    - 'Mijia Cloud'
-    - 'dlg.io.mi.com'
-    - '+.apple.com'
   force-domain:
+    - '+'
+  skip-domain:
     - '+.google.com'
-    - '+.cloudflare.com'
-    - '+.cloudflare.net'
-    - '+.cloudfront.net'
   port-whitelist:
     - 443
     - 80
-    - 8000-9000
-
-experimental:
-  ignore-resolve-fail: true
 dns:
   enable: true
+  device: Meta
   ipv6: true
-  enhanced-mode: fake-ip
-  listen: 0.0.0.0:2323
+  prefer-h3: true #start DOH to use http/3 first
+  default-nameserver:
+    - 1.1.1.1
+    - 94.140.14.14
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-  - "*.lan"
-  - "*.localdomain"
-  - "*.example"
-  - "*.invalid"
-  - "*.localhost"
-  - "*.test"
-  - "*.local"
-  - "*.home.arpa"
-  - time.*.com
-  - time.*.gov
-  - time.*.edu.cn
-  - time.*.apple.com
-  - time1.*.com
-  - time2.*.com
-  - time3.*.com
-  - time4.*.com
-  - time5.*.com
-  - time6.*.com
-  - time7.*.com
-  - ntp.*.com
-  - ntp1.*.com
-  - ntp2.*.com
-  - ntp3.*.com
-  - ntp4.*.com
-  - ntp5.*.com
-  - ntp6.*.com
-  - ntp7.*.com
-  - "*.time.edu.cn"
-  - "*.ntp.org.cn"
-  - "+.pool.ntp.org"
-  - time1.cloud.tencent.com
-  - music.163.com
-  - "*.music.163.com"
-  - "*.126.net"
-  - musicapi.taihe.com
-  - music.taihe.com
-  - songsearch.kugou.com
-  - trackercdn.kugou.com
-  - "*.kuwo.cn"
-  - api-jooxtt.sanook.com
-  - api.joox.com
-  - joox.com
-  - y.qq.com
-  - "*.y.qq.com"
-  - streamoc.music.tc.qq.com
-  - mobileoc.music.tc.qq.com
-  - isure.stream.qqmusic.qq.com
-  - dl.stream.qqmusic.qq.com
-  - aqqmusic.tc.qq.com
-  - amobile.music.tc.qq.com
-  - "*.xiami.com"
-  - "*.music.migu.cn"
-  - music.migu.cn
-  - "+.msftconnecttest.com"
-  - "+.msftncsi.com"
-  - msftconnecttest.com
-  - msftncsi.com
-  - localhost.ptlogin2.qq.com
-  - localhost.sec.qq.com
-  - "+.srv.nintendo.net"
-  - "*.n.n.srv.nintendo.net"
-  - "+.stun.playstation.net"
-  - xbox.*.*.microsoft.com
-  - "*.*.xboxlive.com"
-  - xbox.*.microsoft.com
-  - xnotify.xboxlive.com
-  - "+.battlenet.com.cn"
-  - "+.wotgame.cn"
-  - "+.wggames.cn"
-  - "+.wowsgame.cn"
-  - "+.wargaming.net"
-  - proxy.golang.org
-  - stun.*.*
-  - stun.*.*.*
-  - "+.stun.*.*"
-  - "+.stun.*.*.*"
-  - "+.stun.*.*.*.*"
-  - "+.stun.*.*.*.*.*"
-  - heartbeat.belkin.com
-  - "*.linksys.com"
-  - "*.linksyssmartwifi.com"
-  - "*.router.asus.com"
-  - mesu.apple.com
-  - swscan.apple.com
-  - swquery.apple.com
-  - swdownload.apple.com
-  - swcdn.apple.com
-  - swdist.apple.com
-  - lens.l.google.com
-  - stun.l.google.com
-  - "+.nflxvideo.net"
-  - "*.square-enix.com"
-  - "*.finalfantasyxiv.com"
-  - "*.ffxiv.com"
-  - "*.ff14.sdo.com"
-  - ff.dorado.sdo.com
-  - "*.mcdn.bilivideo.cn"
-  - "+.media.dssott.com"
-  - time-ios.apple.com
-  - shark007.net
-  fallback-filter:
-    geoip: true
-    geoip-code: ID
-    ipcidr:
-    - 0.0.0.0/8
-    - 10.0.0.0/8
-    - 100.64.0.0/10
-    - 127.0.0.0/8
-    - 169.254.0.0/16
-    - 172.16.0.0/12
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 192.168.0.0/16
-    - 198.18.0.0/15
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - 224.0.0.0/4
-    - 240.0.0.0/4
-    - 255.255.255.255/32
-    domain:
-    - "+.google.com"
-    - "+.facebook.com"
-    - "+.youtube.com"
-    - "+.githubusercontent.com"
-    - "+.googlevideo.com"
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
-    - msftconnecttest.com
-    - msftncsi.com
-    - "+.*"
-  default-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
-  - 9.9.9.9
-  - 149.112.112.112
-  - 208.67.222.222
-  - 208.67.220.220
-  - 185.228.168.9
-  - 185.228.169.168
-  - 76.76.2.0
-  - 76.76.10.0
-  - 94.140.14.140
-  - 94.140.14.141
-  - 172.105.216.54
+    - "*.local"
+    - "*.localhost"
+    - "dns.*"
+    - "dns.*.*"
+    - "networktest.twilio.com"
+    - "+.twilio.com"
   nameserver:
-  - https://dns.quad9.net/dns-query
-  - tls://dns.quad9.net:853
+    - 9.9.9.9
+    - 8.8.8.8
+    - 149.112.112.112
   fallback:
-  - https://dns.quad9.net/dns-query
-  - tls://dns.quad9.net:853
-profile:
-  store-selected: true
-  store-fakeip: true
-  store-fake-ip: true
-
-tun:
-  enable: true
-  device: meta
-  stack: system
-  dns-hijack:
-    - tcp://any:53
-  auto-route: false
-  auto-detect-interface: false
-
+    - 8.8.8.8
+    - 1.1.1.1
+  fallback-filter:
+    geoip: false
+    geoip-code: "ID"
+    geosite: []
+    ipcidr: []
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+hosts:
+  'ota.googlezip.net': 127.0.0.1
+  'cacerts.digicert.com': 104.21.21.147
+tproxy-port: 9898
 proxies:
-# Vless WS
-  - name: 🇮🇩 Atha
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
-    udp: true
-    tls: false
-    network: ws
-    servername: id-atha.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: id-atha.vpn-ws.com
-
-  - name: 🇮🇩 Elastis
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
-    udp: true
-    tls: false
-    network: ws
-    servername: cloud.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: cloud.vpn-ws.com
-
-  - name: 🇮🇩 Uninet 1
-    type: vless
-    server: 172.67.199.34
-    port: 443
-    uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
-    udp: true
-    tls: true
-    network: ws
-    servername: id-1.vless.co
-    skip-cert-verify: true
-    ws-opts:
-      path: "/fastssh/yvyvvyvy/62df2c74487c8/"
-      headers:
-        Host: id-1.vless.co
-
-  - name: 🇸🇬 Digital Ocean
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: c1446e03-a0de-481a-c988-7a14330e7baf
-    udp: true
-    tls: false
-    network: ws
-    servername: sgd.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sgd.vpn-ws.com
-
-  - name: 🇸🇬 Linode
-    type: vless
-    server: 172.67.199.34
-    port: 80
-    uuid: 394664e5-127c-4ab6-fe18-c0eac2a85bca
-    udp: true
-    tls: false
-    network: ws
-    servername: sgp.vpn-ws.com
-    skip-cert-verify: true
-    ws-opts:
-      path: /vpnws
-      headers:
-        Host: sgp.vpn-ws.com
-
-  - name: 🇸🇬 OVH
-    type: vless
-    server: 172.67.199.34
-    port: 443
-    uuid: 7687f86d-e121-4dbe-bb39-adf59deac173
-    udp: true
-    tls: true
-    network: ws
-    servername: sgovh1.v2vless.xyz
-    skip-cert-verify: true
-    ws-opts:
-      path: /vless
-      headers:
-        Host: sgovh1.v2vless.xyz
-
-  - name: 🇮🇩 Argon
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 47b33c60-ee70-11ec-b6dd-1577c1651679
-    udp: true
-    sni: id-argontj.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-argontj.bypass.id
-
-  - name: 🇸🇬 GS
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 12f1c9a0-ee6f-11ec-839a-1577c1651679
-    udp: true
-    sni: sggs.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: sggs.bypass.id
-
-  - name: 🇸🇬 Contabo
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: eed7e600-ee6e-11ec-8da5-1577c1651679
-    udp: true
-    sni: trojan-contabo2.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: trojan-contabo2.bypass.id
-
-  - name: 🇸🇬 HE
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 76cd5b90-0d3c-11ed-a3d6-1239d0255272
-    udp: true
-    sni: sg1-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: sg1-trojan.bonds.id
-
-  - name: 🇮🇩 Sanggoro
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: ac0c21a0-ee6f-11ec-8822-1577c1651679
-    udp: true
-    sni: id-sanggoro.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-sanggoro.bypass.id
-
-  - name: 🇮🇩 IKD
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 71f55510-0c71-11ed-b867-1239d0255272
-    udp: true
-    sni: idtj-ikd.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: idtj-ikd.bonds.id
-
-  - name: 🇮🇩 Biznet
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 87847520-0c11-11ed-b997-1239d0255272
-    udp: true
-    sni: id5-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id5-trojan.bonds.id
-
-  - name: 🇮🇩 BiznetJKT
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: c1717d40-0cc4-11ed-b391-1239d0255272
-    udp: true
-    sni: id2-trojan.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id2-trojan.bonds.id
-
-  - name: 🇮🇩 Uninet
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: ac9dc3f0-0c6f-11ed-ac52-1239d0255272
-    udp: true
-    sni: idtj-uninet.bonds.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: idtj-uninet.bonds.id
-
-  - name: 🇮🇩 Game
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 68bfd030-d9bd-11ec-b4bc-1577c1651679
-    udp: true
-    sni: id-game.bypass.id
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: "/howdy"
-      headers:
-        Host: id-game.bypass.id
-
-  - name: 🇮🇩 Linkgo
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: f9648b81-001f-4c4b-aae4-579289b0546b
-    skip-cert-verify: true
-    sni: idt1.sshocean.net
-    network: ws
-    ws-opts:
-      path: /websocket
-      headers:
-        Host: idt1.sshocean.net
-    udp: true
-
-  - name: 🇸🇬 0708
-    server: 172.67.199.34
-    port: 443
-    type: trojan
-    password: 1622e080-10de-11ed-8f87-1239d0255272
-    skip-cert-verify: true
-    sni: trojan3.udpgw.com
-    network: ws
-    ws-opts:
-      path: /howdy
-      headers:
-        Host: trojan3.udpgw.com
-    udp: true
-
+proxy-providers:
+  ID:
+    type: http
+    path: "./confs/ID.yaml"
+    url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/ID.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 180
+  SG:
+    type: http
+    path: "./confs/SG.yaml"
+    url: "https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/SG.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 180
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -476,133 +104,60 @@ proxy-groups:
       - 🎮 Gaming
       - 🎞️ Streaming
       - DIRECT
-
   - name: 📌 Select
     type: select
-    proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
-
+    use:
+      - ID
+      - SG
   - name: ♻️ Auto
     type: url-test
-    proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+    use:
+      - ID
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
-
   - name: 📊 Load Balance
     type: load-balance
-    proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+    use:
+      - ID
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
     strategy: consistent-hashing # consistent-hashing  or round-robin
-
   - name: 📱 Sosmed
     type: select
     proxies:
       - 🇮🇩 Indonesia
       - 🇸🇬 Singapore
-
   - name: 🎮 Gaming
     type: select
     proxies:
       - 🇮🇩 Indonesia
       - 🇸🇬 Singapore
-
   - name: 🎞️ Streaming
     type: select
     proxies:
       - 🇮🇩 Indonesia
       - 🇸🇬 Singapore
-
   - name: 🇸🇬 Singapore
     type: url-test
-    proxies:
-      - 🇸🇬 0708
-      - 🇸🇬 Contabo
-      - 🇸🇬 Digital Ocean
-      - 🇸🇬 GS
-      - 🇸🇬 HE
-      - 🇸🇬 Linode
-      - 🇸🇬 OVH
+    use:
+      - SG
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
-
   - name: 🇮🇩 Indonesia
     type: url-test
-    proxies:
-      - 🇮🇩 Argon
-      - 🇮🇩 Atha
-      - 🇮🇩 Biznet
-      - 🇮🇩 BiznetJKT
-      - 🇮🇩 Elastis
-      - 🇮🇩 Game
-      - 🇮🇩 IKD
-      - 🇮🇩 Linkgo
-      - 🇮🇩 Sanggoro
-      - 🇮🇩 Uninet
-      - 🇮🇩 Uninet 1
+    use:
+      - ID
     url: 'http://captive.apple.com/generate_204'
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
-
 rule-providers:
   ⛔ Adblock:
     type: http
@@ -610,70 +165,54 @@ rule-providers:
     path: ./Adblock.yaml
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml'
     interval: 86300
-
   ☢️ Anti-Hijack:
     type: http
     behavior: classical
     path: ./Hijack.yaml
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
-
-  🌏 LAN:
-    type: http
-    behavior: ipcidr
-    path: ./lan.yaml
-    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/lan.yaml'
-    interval: 86300
-
   📱 Sosmed:
     type: http
     behavior: classical
     path: ./sosmed.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
     interval: 86300
-
   🎞️ Streaming:
     type: http
     behavior: classical
     path: ./streaming.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/streaming.yaml'
     interval: 86300
-
   🎮 Gaming:
     type: http
     behavior: classical
     path: ./gaming.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/gaming.yaml'
     interval: 86300
-
   🤖 Telegram:
     type: http
     behavior: classical
     path: ./telegram.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/telegram.yaml'
     interval: 86300
-
   🚫 Basic-ADS:
     type: http
     behavior: domain
     path: ./basicads.yaml
     url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_basicads.yaml'
     interval: 86300
-
   🚫 Personal-ADS:
     type: http
     behavior: classical
     path: ./personalads.yaml
     url: 'https://raw.githubusercontent.com/malikshi/open_clash/main/rule_provider/rule_personalads.yaml'
     interval: 86300
-
   🔒 Personal:
     type: http
     behavior: classical
     path: ./personal.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/personal.yaml'
     interval: 86300
-
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -693,6 +232,8 @@ rules:
   - DOMAIN,mqtt-mini.facebook.com,REJECT
   - DOMAIN,connect.facebook.net,REJECT
   - DOMAIN,ads.facebook.com,REJECT
+  - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
+  - IP-CIDR6,::1/128,REJECT,no-resolve
   - RULE-SET,⛔ Adblock,REJECT,no-resolve
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
   - RULE-SET,📱 Sosmed,📱 Sosmed
@@ -702,5 +243,4 @@ rules:
   - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
   - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
   - RULE-SET,🔒 Personal,🇮🇩 Indonesia
-  - RULE-SET,🌏 LAN,DIRECT
   - MATCH,🗂️ Group

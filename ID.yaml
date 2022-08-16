@@ -1,0 +1,40 @@
+proxies:
+  - name: 🇮🇩 BiznetJKT
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 3e46d8c0-1d81-11ed-925e-1239d0255272
+    skip-cert-verify: true
+    sni: id5-trojan.bonds.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: id5-trojan.bonds.id
+    udp: true
+  - name: 🇮🇩 Herza
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 6b50a0a0-1d81-11ed-898b-1239d0255272
+    skip-cert-verify: true
+    sni: idtj-herza.bonds.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: idtj-herza.bonds.id
+    udp: true
+  - name: 🇮🇩 Biznet
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 83aa7ab0-1d81-11ed-a82f-1239d0255272
+    skip-cert-verify: true
+    sni: id2-trojan.bonds.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: id2-trojan.bonds.id
+    udp: true
