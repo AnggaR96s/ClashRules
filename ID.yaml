@@ -51,3 +51,16 @@ proxies:
       headers:
         Host: nusa.kencang.my.id
     udp: true
+  - name: 🇮🇩 Infy
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: goodboy
+    skip-cert-verify: true
+    sni: infy01.premiumvip.tech
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: infy01.premiumvip.tech
+    udp: true
