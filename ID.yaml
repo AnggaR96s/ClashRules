@@ -38,3 +38,16 @@ proxies:
       headers:
         Host: id2-trojan.bonds.id
     udp: true
+  - name: 🇮🇩 Nusa
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: 45bf0328-871b-462e-b07b-c5e2b9ce2e2c
+    skip-cert-verify: true
+    sni: nusa.kencang.my.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: nusa.kencang.my.id
+    udp: true
