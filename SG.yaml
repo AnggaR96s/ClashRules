@@ -70,10 +70,10 @@ proxies:
   type: trojan
   password: bd16c7c7-eed4-40af-b41d-f120fd6a9d6c
   skip-cert-verify: true
-  sni: sgtr-prem.premiumvip.tech
+  sni: sgovh-trojan.bonds.id
   network: ws
   ws-opts: 
-    path: /trojan
+    path: /trojan-ws
     headers: 
-      Host: sgtr-prem.premiumvip.tech
+      Host: sgovh-trojan.bonds.id
   udp: true
