@@ -64,3 +64,16 @@ proxies:
     headers: 
       Host: sgovh-trojan.bonds.id
   udp: true
+- name: 🇸🇬 Linode
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: bd16c7c7-eed4-40af-b41d-f120fd6a9d6c
+  skip-cert-verify: true
+  sni: sgtr-prem.premiumvip.tech
+  network: ws
+  ws-opts: 
+    path: /howdy
+    headers: 
+      Host: sgtr-prem.premiumvip.tech
+  udp: true
