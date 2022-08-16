@@ -64,3 +64,16 @@ proxies:
       headers:
         Host: infy01.premiumvip.tech
     udp: true
+  - name: 🇮🇩 Nusaid
+    server: 172.67.199.34
+    port: 443
+    type: trojan
+    password: nusaid
+    skip-cert-verify: true
+    sni: nusaid.wdsmm.me
+    network: ws
+    ws-opts:
+      path: /trojan-go
+      headers:
+        Host: nusaid.wdsmm.me
+    udp: true
