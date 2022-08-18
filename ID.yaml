@@ -75,12 +75,12 @@ proxies:
     skip-cert-verify: true
     servername: net2.xtls.my.id
     network: ws
-    ws-opts: 
-      path: /trojan
-      headers: 
+    ws-opts:
+      path: /
+      headers:
         Host: net2.xtls.my.id
     udp: true
-  - name: 🇮🇩 LinkGO
+  - name: 🇮🇩 LinkGO2
     server: akrab.gaaa.my.id
     port: 443
     type: vmess
@@ -91,9 +91,9 @@ proxies:
     skip-cert-verify: true
     servername: net2.xtls.my.id
     network: ws
-    ws-opts: 
-      path: /trojan
-      headers: 
+    ws-opts:
+      path: /
+      headers:
         Host: net2.xtls.my.id
     udp: true
   - name: 🇮🇩 CloudHost
@@ -107,8 +107,8 @@ proxies:
     skip-cert-verify: true
     servername: net3.xtls.my.id
     network: ws
-    ws-opts: 
-      path: /trojan
-      headers: 
+    ws-opts:
+      path: /
+      headers:
         Host: net3.xtls.my.id
     udp: true

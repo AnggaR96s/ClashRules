@@ -7,9 +7,9 @@ proxies:
   skip-cert-verify: true
   sni: sg8-trojan.bonds.id
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /howdy
-    headers: 
+    headers:
       Host: sg8-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE3
@@ -20,9 +20,9 @@ proxies:
   skip-cert-verify: true
   sni: sg3-trojan.bonds.id
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /howdy
-    headers: 
+    headers:
       Host: sg3-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HEMUX
@@ -33,9 +33,9 @@ proxies:
   skip-cert-verify: true
   sni: sg6-trojan.bonds.id
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /howdy
-    headers: 
+    headers:
       Host: sg6-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE1
@@ -46,9 +46,9 @@ proxies:
   skip-cert-verify: true
   sni: sg1-trojan.bonds.id
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /howdy
-    headers: 
+    headers:
       Host: sg1-trojan.bonds.id
   udp: true
 - name: 🇸🇬 OVH
@@ -59,9 +59,9 @@ proxies:
   skip-cert-verify: true
   sni: sgovh-trojan.bonds.id
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /howdy
-    headers: 
+    headers:
       Host: sgovh-trojan.bonds.id
   udp: true
 - name: 🇸🇬 Linode
@@ -72,9 +72,9 @@ proxies:
   skip-cert-verify: true
   sni: sgtr-prem.premiumvip.tech
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /trojan-ws
-    headers: 
+    headers:
       Host: sgtr-prem.premiumvip.tech
   udp: true
 - name: 🇸🇬 Linode 2
@@ -85,9 +85,9 @@ proxies:
   skip-cert-verify: true
   sni: sgtr-prem.premiumvip.tech
   network: ws
-  ws-opts: 
+  ws-opts:
     path: /trojan-ws
-    headers: 
+    headers:
       Host: sgtr-prem.premiumvip.tech
   udp: true
 - name: 🇸🇬 CloudHost
@@ -101,8 +101,8 @@ proxies:
   skip-cert-verify: true
   servername: net1.xtls.my.id
   network: ws
-  ws-opts: 
-    path: /vmess
-    headers: 
+  ws-opts:
+    path: /
+    headers:
       Host: net1.xtls.my.id
   udp: true
