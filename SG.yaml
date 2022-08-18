@@ -90,3 +90,19 @@ proxies:
     headers: 
       Host: sgtr-prem.premiumvip.tech
   udp: true
+  - name: 🇸🇬 CloudHost
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: net1.xtls.my.id
+    network: ws
+    ws-opts: 
+      path: /vmess
+      headers: 
+        Host: net1.xtls.my.id
+    udp: true
