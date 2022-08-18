@@ -227,22 +227,9 @@ rule-providers:
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - AND,((UID,10304) && (NETWORK,UDP)),DIRECT
+  - AND,((PROCESS-NAME,com.whatsapp) && ((NETWORK,UDP)),DIRECT
   - GEOSITE,category-ads-all,REJECT
-  - DOMAIN,api2.branch.io,REJECT
-  - DOMAIN,vulcan.branch.io,REJECT
-  - DOMAIN,vulcan1.branch.io,REJECT
-  - DOMAIN,vulcan2.branch.io,REJECT
-  - DOMAIN,vulcan3.branch.io,REJECT
-  - DOMAIN,mtalk.google.com,REJECT
-  - DOMAIN,clients4.google.com,REJECT
-  - DOMAIN,clients3.google.com,REJECT
-  - DOMAIN,clients2.google.com,REJECT
-  - DOMAIN,clients1.google.com,REJECT
-  - DOMAIN,clients.google.com,REJECT
-  - DOMAIN,beacons5.gvt3.com,REJECT
-  - DOMAIN,mqtt-mini.facebook.com,REJECT
-  - DOMAIN,connect.facebook.net,REJECT
-  - DOMAIN,ads.facebook.com,REJECT
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
   - RULE-SET,⛔ Adblock,REJECT,no-resolve
