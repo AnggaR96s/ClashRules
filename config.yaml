@@ -238,6 +238,8 @@ rules:
   - GEOSITE,category-ads-all,REJECT
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
+  - DOMAIN,ads.facebook.com,REJECT
+  - DOMAIN,ads.google.com,REJECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
   - RULE-SET,📱 Sosmed,📱 Sosmed
