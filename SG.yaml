@@ -77,16 +77,16 @@ proxies:
     headers: 
       Host: sgtr-prem.premiumvip.tech
   udp: true
-- name: 🇸🇬 DO
+- name: 🇸🇬 Linode 2
   server: 172.67.199.34
   port: 443
   type: trojan
-  password: 3029554b-464b-42f1-aa97-a8f47fec2285
+  password: 5bdecbc5-c3af-44b6-98e3-cf5c173a9300
   skip-cert-verify: true
-  sni: sgtr2.premiumvip.tech
+  sni: sgtr-prem.premiumvip.tech
   network: ws
   ws-opts: 
     path: /trojan-ws
     headers: 
-      Host: sgtr2.premiumvip.tech
+      Host: sgtr-prem.premiumvip.tech
   udp: true
