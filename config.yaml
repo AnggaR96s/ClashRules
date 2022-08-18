@@ -233,6 +233,7 @@ rule-providers:
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - AND,((UID,10304),(NETWORK,UDP)),DIRECT
   - GEOSITE,category-ads-all,REJECT
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
