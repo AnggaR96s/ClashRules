@@ -224,8 +224,16 @@ rule-providers:
     path: ./personal.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/personal.yaml'
     interval: 86300
+  ➡️ Direct:
+    type: http
+    behavior: classical
+    path: ./direct.yaml
+    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/direct.yaml'
+    interval: 86300
 rules:
   - IN-TYPE,TUN,🗂️ Group
+  - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
+  - AND,((UID,10304),(NETWORK,UDP)),DIRECT
   - GEOSITE,category-ads-all,REJECT
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
@@ -238,4 +246,5 @@ rules:
   - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
   - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
   - RULE-SET,🔒 Personal,🇮🇩 Indonesia
+  - RULE-SET,➡️ Direct,DIRECT
   - MATCH,🗂️ Group
