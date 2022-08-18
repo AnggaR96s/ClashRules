@@ -64,3 +64,51 @@ proxies:
       headers:
         Host: infy01.premiumvip.tech
     udp: true
+  - name: 🇮🇩 LinkGO1
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: net2.xtls.my.id
+    network: ws
+    ws-opts: 
+      path: /trojan
+      headers: 
+        Host: net2.xtls.my.id
+    udp: true
+  - name: 🇮🇩 LinkGO
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: net2.xtls.my.id
+    network: ws
+    ws-opts: 
+      path: /trojan
+      headers: 
+        Host: net2.xtls.my.id
+    udp: true
+  - name: 🇮🇩 CloudHost
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: net3.xtls.my.id
+    network: ws
+    ws-opts: 
+      path: /trojan
+      headers: 
+        Host: net3.xtls.my.id
+    udp: true
