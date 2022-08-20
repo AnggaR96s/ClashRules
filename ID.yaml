@@ -112,3 +112,19 @@ proxies:
       headers:
         Host: net3.xtls.my.id
     udp: true
+  - name: 🇮🇩 Rajasa
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: d20f1f8f-5e81-4c80-9940-15526e4436c3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: rajasa-free.ajunvpn.group
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: rajasa-free.ajunvpn.group
+    udp: true
