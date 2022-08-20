@@ -109,32 +109,3 @@ proxies:
     headers:
       Host: sg.gaaa.my.id
   udp: true
-- name: 🇸🇬 TrSGDO
-  server: akrab.gaaa.my.id
-  port: 2087
-  type: trojan
-  password: 5bdecbc5-c3af-44b6-98e3-cf5c173a9300
-  skip-cert-verify: true
-  sni: sg.gaaa.my.id
-  network: ws
-  ws-opts:
-    path: /trojango
-    headers:
-      Host: sg.gaaa.my.id
-  udp: true
-- name: 🇸🇬 ssSGDO
-  type: ss
-  server: akrab.gaaa.my.id
-  port: 2944
-  cipher: aes-256-cfb
-  password: ss
-  udp-over-tcp: true
-  plugin: v2ray-plugin
-  plugin-opts:
-    mode: websocket
-    host: sg.gaaa.my.id
-    sni: sg.gaaa.my.id
-    path: /
-    tls: true
-    skip-cert-verify: true
-    mux: false
