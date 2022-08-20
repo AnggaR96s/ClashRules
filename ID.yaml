@@ -1,6 +1,6 @@
 proxies:
   - name: 🇮🇩 BiznetJKT
-    server: 172.67.199.34
+    server: akrab.gaaa.my.id
     port: 443
     type: trojan
     password: 3e46d8c0-1d81-11ed-925e-1239d0255272
@@ -13,7 +13,7 @@ proxies:
         Host: id5-trojan.bonds.id
     udp: true
   - name: 🇮🇩 Herza
-    server: 172.67.199.34
+    server: akrab.gaaa.my.id
     port: 443
     type: trojan
     password: 6b50a0a0-1d81-11ed-898b-1239d0255272
@@ -26,7 +26,7 @@ proxies:
         Host: idtj-herza.bonds.id
     udp: true
   - name: 🇮🇩 Biznet
-    server: 172.67.199.34
+    server: akrab.gaaa.my.id
     port: 443
     type: trojan
     password: 83aa7ab0-1d81-11ed-a82f-1239d0255272
@@ -39,7 +39,7 @@ proxies:
         Host: id2-trojan.bonds.id
     udp: true
   - name: 🇮🇩 Nusa
-    server: 172.67.199.34
+    server: akrab.gaaa.my.id
     port: 443
     type: trojan
     password: 45bf0328-871b-462e-b07b-c5e2b9ce2e2c
@@ -52,7 +52,7 @@ proxies:
         Host: nusa.kencang.my.id
     udp: true
   - name: 🇮🇩 Infy
-    server: 172.67.199.34
+    server: akrab.gaaa.my.id
     port: 443
     type: trojan
     password: goodboy

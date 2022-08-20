@@ -1,6 +1,6 @@
 proxies:
 - name: 🇸🇬 UDPGW
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
@@ -13,7 +13,7 @@ proxies:
       Host: sg8-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE3
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: cc577400-1d9a-11ed-86ab-1239d0255272
@@ -26,7 +26,7 @@ proxies:
       Host: sg3-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HEMUX
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: ea4fa5a0-1d9a-11ed-8594-1239d0255272
@@ -39,7 +39,7 @@ proxies:
       Host: sg6-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE1
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: 22bc9940-1d9b-11ed-a427-1239d0255272
@@ -52,7 +52,7 @@ proxies:
       Host: sg1-trojan.bonds.id
   udp: true
 - name: 🇸🇬 OVH
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: 4d515ac0-1d9b-11ed-83a7-1239d0255272
@@ -65,7 +65,7 @@ proxies:
       Host: sgovh-trojan.bonds.id
   udp: true
 - name: 🇸🇬 Linode
-  server: 172.67.199.34
+  server: akrab.gaaa.my.id
   port: 443
   type: trojan
   password: 5bdecbc5-c3af-44b6-98e3-cf5c173a9300

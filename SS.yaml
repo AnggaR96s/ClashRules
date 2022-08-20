@@ -10,8 +10,8 @@ proxies:
     skip-cert-verify: true
     servername: sg-lb.sshkit.org
     network: ws
-    ws-opts: 
+    ws-opts:
       path: /sshkit/anggalb/62fdb0b35bc6f/
-      headers: 
+      headers:
         Host: sg-lb.sshkit.org
     udp: true
