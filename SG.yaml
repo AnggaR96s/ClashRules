@@ -93,3 +93,19 @@ proxies:
     headers:
       Host: net1.xtls.my.id
   udp: true
+- name: 🇸🇬 MySGDO
+  server: akrab.gaaa.my.id
+  port: 8443
+  type: vmess
+  uuid: d067e433-44d3-475a-907d-744c878b96e8
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sgdo.gaaa.my.id
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: sgdo.gaaa.my.id
+  udp: true
