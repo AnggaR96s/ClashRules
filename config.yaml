@@ -108,7 +108,7 @@ proxy-groups:
       - 📌 Select
       - ♻️ Auto
       - 📊 Load Balance
-      - 📱 Sosmed
+      # - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
       - DIRECT
@@ -138,11 +138,11 @@ proxy-groups:
     interval: 150
     tolerance: 30
     strategy: consistent-hashing # consistent-hashing  or round-robin
-  - name: 📱 Sosmed
-    type: select
-    proxies:
-      - 🇮🇩 Indonesia
-      - 🇸🇬 Singapore
+   # - name: 📱 Sosmed
+   #  type: select
+   #  proxies:
+   #    - 🇮🇩 Indonesia
+   #    - 🇸🇬 Singapore
   - name: 🎮 Gaming
     type: select
     proxies:
@@ -182,12 +182,12 @@ rule-providers:
     path: ./Hijack.yaml
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
-  📱 Sosmed:
-    type: http
-    behavior: classical
-    path: ./sosmed.yaml
-    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
-    interval: 86300
+  # 📱Sosmed:
+  #   type: http
+  #   behavior: classical
+  #   path: ./sosmed.yaml
+  #   url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
+  #   interval: 86300
   🎞️ Streaming:
     type: http
     behavior: classical
@@ -234,15 +234,15 @@ rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
   - AND,((UID,10304),(NETWORK,UDP)),DIRECT
-  - AND,((PROCESS-NAME,com.whatsapp),(NETWORK,UDP)),DIRECT
   - GEOSITE,category-ads-all,REJECT
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
   - DOMAIN,ads.facebook.com,REJECT
   - DOMAIN,ads.google.com,REJECT
+  - DOMAIN-KEYWORD,whatsapp,DIRECT
   - RULE-SET,⛔ Adblock,REJECT,no-resolve
   - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
-  - RULE-SET,📱 Sosmed,📱 Sosmed
+  # - RULE-SET,📱 Sosmed,📱 Sosmed
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
   - RULE-SET,🤖 Telegram,🇸🇬 Singapore
