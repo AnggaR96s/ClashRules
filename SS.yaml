@@ -1,6 +1,6 @@
 proxies:
   - name: sg-lb-25
-    server: akrab.gaaa.my.id
+    server: 162.159.128.7
     port: 443
     type: vmess
     uuid: 6fea1649-425b-4092-bf53-29792152c925
@@ -8,10 +8,10 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: sg-lb.sshkit.org
+    servername: zendesk1.appsflyer.com
     network: ws
     ws-opts:
-      path: /sshkit/anggalb/62fdb0b35bc6f/
+      path: wss://zendesk1.appsflyer.com/sshkit/anggalb/62fdb0b35bc6f/
       headers:
         Host: sg-lb.sshkit.org
     udp: true
