@@ -1,84 +1,84 @@
 proxies:
 - name: 🇸🇬 UDPGW
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
   skip-cert-verify: true
-  sni: sg8-trojan.bonds.id
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /howdy
+    path: wss://zendesk1.appsflyer.com/howdy
     headers:
       Host: sg8-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE3
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: cc577400-1d9a-11ed-86ab-1239d0255272
   skip-cert-verify: true
-  sni: sg3-trojan.bonds.id
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /howdy
+    path: wss://zendesk1.appsflyer.com/howdy
     headers:
       Host: sg3-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HEMUX
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: ea4fa5a0-1d9a-11ed-8594-1239d0255272
   skip-cert-verify: true
-  sni: sg6-trojan.bonds.id
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /howdy
+    path: wss://zendesk1.appsflyer.com/howdy
     headers:
       Host: sg6-trojan.bonds.id
   udp: true
 - name: 🇸🇬 HE1
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: 22bc9940-1d9b-11ed-a427-1239d0255272
   skip-cert-verify: true
-  sni: sg1-trojan.bonds.id
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /howdy
+    path: wss://zendesk1.appsflyer.com/howdy
     headers:
       Host: sg1-trojan.bonds.id
   udp: true
 - name: 🇸🇬 OVH
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: 4d515ac0-1d9b-11ed-83a7-1239d0255272
   skip-cert-verify: true
-  sni: sgovh-trojan.bonds.id
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /howdy
+    path: wss://zendesk1.appsflyer.com/howdy
     headers:
       Host: sgovh-trojan.bonds.id
   udp: true
 - name: 🇸🇬 Linode
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: trojan
   password: 5bdecbc5-c3af-44b6-98e3-cf5c173a9300
   skip-cert-verify: true
-  sni: sgtr-prem.premiumvip.tech
+  sni: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /trojan-ws
+    path: wss://zendesk1.appsflyer.com/trojan-ws
     headers:
       Host: sgtr-prem.premiumvip.tech
   udp: true
 - name: 🇸🇬 CloudHost
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 443
   type: vmess
   uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
@@ -86,15 +86,15 @@ proxies:
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: net1.xtls.my.id
+  servername: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /
+    path: wss://zendesk1.appsflyer.com/
     headers:
       Host: net1.xtls.my.id
   udp: true
 - name: 🇸🇬 VmSGDO
-  server: akrab.gaaa.my.id
+  server: 162.159.128.7
   port: 8443
   type: vmess
   uuid: 469d6957-4580-4982-b841-0d478b30f60c
@@ -102,10 +102,10 @@ proxies:
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: sg.gaaa.my.id
+  servername: zendesk1.appsflyer.com
   network: ws
   ws-opts:
-    path: /vmess/
+    path: wss://zendesk1.appsflyer.com/vmess/
     headers:
       Host: sg.gaaa.my.id
   udp: true
