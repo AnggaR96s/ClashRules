@@ -35,7 +35,7 @@ proxies:
     server: 162.159.128.7
     port: 443
     type: trojan
-    password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
+    password: opentunnel.net-angga
     skip-cert-verify: true
     sni: zendesk1.appsflyer.com
     network: ws
