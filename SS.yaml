@@ -1,5 +1,5 @@
 proxies:
-  - name: sg-lb-25
+  - name: 🇸🇬 sg-lb-25
     server: 162.159.128.7
     port: 443
     type: vmess
@@ -14,4 +14,20 @@ proxies:
       path: wss://zendesk1.appsflyer.com/sshkit/anggalb/62fdb0b35bc6f/
       headers:
         Host: sg-lb.sshkit.org
+    udp: true
+  - name: 🇮🇩 opentunnel
+    server: 162.159.128.7
+    port: 443
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: zendesk1.appsflyer.com
+    network: ws
+    ws-opts: 
+      path: wss://zendesk1.appsflyer.com/u/opentunnel.net-angga
+      headers: 
+        Host: idv-3.openv2ray.com
     udp: true
