@@ -40,7 +40,7 @@ proxies:
     sni: zendesk1.appsflyer.com
     network: ws
     ws-opts:
-      path: wss://zendesk1.appsflyer.com/u/opentunnel.net-angga
+      path: wss://zendesk1.appsflyer.com/
       headers:
         Host: sgt-1.opensvr.net
     udp: true
