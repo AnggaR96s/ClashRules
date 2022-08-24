@@ -31,3 +31,16 @@ proxies:
       headers: 
         Host: idv-3.openv2ray.com
     udp: true
+  - name: 🇸🇬 OTVultr
+    server: 162.159.128.7
+    port: 443
+    type: trojan
+    password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
+    skip-cert-verify: true
+    sni: zendesk1.appsflyer.com
+    network: ws
+    ws-opts:
+      path: wss://zendesk1.appsflyer.com/u/opentunnel.net-angga
+      headers:
+        Host: sgt-1.opensvr.net
+    udp: true
