@@ -169,6 +169,11 @@ proxy-groups:
     interval: 150
     tolerance: 30
     strategy: consistent-hashing
+  - name: ADS
+    type: select
+    proxies:
+      - PASS
+      - REJECT
 rule-providers:
   ⛔ Adblock:
     type: http
@@ -182,12 +187,6 @@ rule-providers:
     path: ./Hijack.yaml
     url: 'https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml'
     interval: 86300
-  # 📱Sosmed:
-  #   type: http
-  #   behavior: classical
-  #   path: ./sosmed.yaml
-  #   url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/sosmed.yaml'
-  #   interval: 86300
   🎞️ Streaming:
     type: http
     behavior: classical
@@ -224,12 +223,6 @@ rule-providers:
     path: ./personal.yaml
     url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/personal.yaml'
     interval: 86300
-  ➡️ Direct:
-    type: http
-    behavior: classical
-    path: ./direct.yaml
-    url: 'https://raw.githubusercontent.com/AnggaR96s/ClashRules/main/direct.yaml'
-    interval: 86300
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
@@ -240,14 +233,12 @@ rules:
   - DOMAIN,ads.facebook.com,REJECT
   - DOMAIN,ads.google.com,REJECT
   - DOMAIN-KEYWORD,whatsapp,DIRECT
-  - RULE-SET,⛔ Adblock,REJECT,no-resolve
-  - RULE-SET,☢️ Anti-Hijack,REJECT,no-resolve
-  # - RULE-SET,📱 Sosmed,📱 Sosmed
+  - RULE-SET,⛔ Adblock,ADS
+  - RULE-SET,☢️ Anti-Hijack,ADS
   - RULE-SET,🎞️ Streaming,🎞️ Streaming
   - RULE-SET,🎮 Gaming,🎮 Gaming
   - RULE-SET,🤖 Telegram,🇸🇬 Singapore
-  - RULE-SET,🚫 Basic-ADS,REJECT,no-resolve
-  - RULE-SET,🚫 Personal-ADS,REJECT,no-resolve
+  - RULE-SET,🚫 Basic-ADS,ADS
+  - RULE-SET,🚫 Personal-ADS,ADS
   - RULE-SET,🔒 Personal,🇮🇩 Indonesia
-  - RULE-SET,➡️ Direct,DIRECT
   - MATCH,🗂️ Group
