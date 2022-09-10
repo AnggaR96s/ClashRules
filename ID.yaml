@@ -82,3 +82,18 @@ proxies:
       headers: 
         Host: id-2.vless.co
     udp: true
+  - name: 🇮🇩 Nusa
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vless
+    uuid: 17d5ce2d-c64e-46a6-a6c9-7e8cb8b37e9e
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id3-ws.xvless.xyz
+    network: ws
+    ws-opts: 
+      path: /websocket
+      headers: 
+        Host: id3-ws.xvless.xyz
+    udp: true
