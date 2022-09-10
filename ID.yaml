@@ -38,19 +38,6 @@ proxies:
       headers:
         Host: id2-trojan.bonds.id
     udp: true
-  - name: 🇮🇩 Nusa
-    server: akrab.gaaa.my.id
-    port: 443
-    type: trojan
-    password: 45bf0328-871b-462e-b07b-c5e2b9ce2e2c
-    skip-cert-verify: true
-    sni: nusa.kencang.my.id
-    network: ws
-    ws-opts:
-      path: /trojan
-      headers:
-        Host: nusa.kencang.my.id
-    udp: true
   - name: 🇮🇩 Infy
     server: akrab.gaaa.my.id
     port: 443
@@ -63,68 +50,4 @@ proxies:
       path: /trojan-go
       headers:
         Host: infy01.premiumvip.tech
-    udp: true
-  - name: 🇮🇩 LinkGO1
-    server: akrab.gaaa.my.id
-    port: 443
-    type: vmess
-    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: net2.xtls.my.id
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: net2.xtls.my.id
-    udp: true
-  - name: 🇮🇩 LinkGO2
-    server: akrab.gaaa.my.id
-    port: 443
-    type: vmess
-    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: net2.xtls.my.id
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: net2.xtls.my.id
-    udp: true
-  - name: 🇮🇩 CloudHost
-    server: akrab.gaaa.my.id
-    port: 443
-    type: vmess
-    uuid: 15df1f53-9101-404b-dd52-7774cdb3c218
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: net3.xtls.my.id
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: net3.xtls.my.id
-    udp: true
-  - name: 🇮🇩 Rajasa
-    server: akrab.gaaa.my.id
-    port: 443
-    type: vmess
-    uuid: d20f1f8f-5e81-4c80-9940-15526e4436c3
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: rajasa-free.ajunvpn.group
-    network: ws
-    ws-opts:
-      path: /v2ray
-      headers:
-        Host: rajasa-free.ajunvpn.group
     udp: true
