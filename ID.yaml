@@ -51,3 +51,34 @@ proxies:
       headers:
         Host: infy01.premiumvip.tech
     udp: true
+  - name: 🇮🇩 LinkGo
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 34917f95-8393-4aa2-a062-327140defdba
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: linkgo1.kitu.xyz
+    network: ws
+    ws-opts: 
+      path: /vmess/
+      headers: 
+        Host: linkgo1.kitu.xyz
+    udp: true
+  - name: 🇮🇩 IKD
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vless
+    uuid: 81f1f510-3ca7-4734-8956-0f4fce670af5
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id-2.vless.co
+    network: ws
+    ws-opts: 
+      path: /fastssh/iked/631cbba1542d2/
+      headers: 
+        Host: id-2.vless.co
+    udp: true
