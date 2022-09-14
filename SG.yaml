@@ -16,7 +16,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: cc577400-1d9a-11ed-86ab-1239d0255272
+  password: 6dd13b60-343c-11ed-a3b2-1239d0255272
   skip-cert-verify: true
   sni: sg3-trojan.bonds.id
   network: ws
