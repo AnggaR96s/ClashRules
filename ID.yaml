@@ -97,3 +97,16 @@ proxies:
       headers: 
         Host: id3-ws.xvless.xyz
     udp: true
+  - name: 🇮🇩 Atha
+    server: akrab.gaaa.my.id
+    port: 443
+    type: trojan
+    password: 789c03db-f1c6-4b47-9696-52a1dda3b9a0
+    skip-cert-verify: true
+    sni: idt3.sshocean.net
+    network: ws
+    ws-opts:
+      path: /websocket
+      headers:
+        Host: idt3.sshocean.net
+    udp: true
