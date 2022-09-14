@@ -16,7 +16,7 @@ proxies:
     server: akrab.gaaa.my.id
     port: 443
     type: trojan
-    password: 6b50a0a0-1d81-11ed-898b-1239d0255272
+    password: 03821660-343c-11ed-bb0a-1239d0255272
     skip-cert-verify: true
     sni: idtj-herza.bonds.id
     network: ws
