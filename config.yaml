@@ -108,7 +108,6 @@ proxy-groups:
       - 📌 Select
       - ♻️ Auto
       - 📊 Load Balance
-      # - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
       - DIRECT
@@ -138,11 +137,6 @@ proxy-groups:
     interval: 150
     tolerance: 30
     strategy: consistent-hashing # consistent-hashing  or round-robin
-   # - name: 📱 Sosmed
-   #  type: select
-   #  proxies:
-   #    - 🇮🇩 Indonesia
-   #    - 🇸🇬 Singapore
   - name: 🎮 Gaming
     type: select
     proxies:
@@ -226,7 +220,6 @@ rule-providers:
 rules:
   - IN-TYPE,TUN,🗂️ Group
   - AND,((DOMAIN,xl.co.id),(NETWORK,UDP)),DIRECT
-  - AND,((UID,10304),(NETWORK,UDP)),DIRECT
   - GEOSITE,category-ads-all,ADS
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
   - IP-CIDR6,::1/128,REJECT,no-resolve
