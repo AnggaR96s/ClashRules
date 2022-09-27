@@ -3,7 +3,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: a6cad4a0-1d9a-11ed-81aa-1239d0255272
+  password: 51fa6ef0-3e9f-11ed-98d9-1239d0255272
   skip-cert-verify: true
   sni: sg8-trojan.bonds.id
   network: ws
@@ -16,7 +16,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: 6dd13b60-343c-11ed-a3b2-1239d0255272
+  password: 76595c40-3e9f-11ed-8788-1239d0255272
   skip-cert-verify: true
   sni: sg3-trojan.bonds.id
   network: ws
@@ -29,7 +29,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: ea4fa5a0-1d9a-11ed-8594-1239d0255272
+  password: 9c563080-3e9f-11ed-acc1-1239d0255272
   skip-cert-verify: true
   sni: sg6-trojan.bonds.id
   network: ws
@@ -42,7 +42,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: 22bc9940-1d9b-11ed-a427-1239d0255272
+  password: c853c770-3e9f-11ed-9985-1239d0255272
   skip-cert-verify: true
   sni: sg1-trojan.bonds.id
   network: ws
@@ -55,7 +55,7 @@ proxies:
   server: akrab.gaaa.my.id
   port: 443
   type: trojan
-  password: 4d515ac0-1d9b-11ed-83a7-1239d0255272
+  password: dd2d8990-3e9f-11ed-9842-1239d0255272
   skip-cert-verify: true
   sni: sgovh-trojan.bonds.id
   network: ws

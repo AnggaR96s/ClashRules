@@ -3,7 +3,7 @@ proxies:
     server: akrab.gaaa.my.id
     port: 443
     type: trojan
-    password: 3e46d8c0-1d81-11ed-925e-1239d0255272
+    password: dc2da6e0-3e9c-11ed-83e3-1239d0255272
     skip-cert-verify: true
     sni: id5-trojan.bonds.id
     network: ws
@@ -16,7 +16,7 @@ proxies:
     server: akrab.gaaa.my.id
     port: 443
     type: trojan
-    password: 03821660-343c-11ed-bb0a-1239d0255272
+    password: fd7985e0-3e9c-11ed-9752-1239d0255272
     skip-cert-verify: true
     sni: idtj-herza.bonds.id
     network: ws
@@ -29,14 +29,14 @@ proxies:
     server: akrab.gaaa.my.id
     port: 443
     type: trojan
-    password: 83aa7ab0-1d81-11ed-a82f-1239d0255272
+    password: 2ea5b970-3e9d-11ed-9997-1239d0255272
     skip-cert-verify: true
-    sni: id2-trojan.bonds.id
+    sni: id5-trojan.bonds.id
     network: ws
     ws-opts:
       path: /howdy
       headers:
-        Host: id2-trojan.bonds.id
+        Host: id5-trojan.bonds.id
     udp: true
   - name: 🇮🇩 Infy
     server: akrab.gaaa.my.id
@@ -51,21 +51,21 @@ proxies:
       headers:
         Host: infy01.premiumvip.tech
     udp: true
-  - name: 🇮🇩 LinkGo
+  - name: 🇮🇩 Dewabiz
     server: akrab.gaaa.my.id
     port: 443
     type: vmess
-    uuid: 34917f95-8393-4aa2-a062-327140defdba
+    uuid: d72f0649-911a-43c6-9380-681745b1cdbf
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: linkgo1.kitu.xyz
+    servername: dewabiz2.kitu.xyz
     network: ws
-    ws-opts: 
+    ws-opts:
       path: /vmess/
-      headers: 
-        Host: linkgo1.kitu.xyz
+      headers:
+        Host: dewabiz2.kitu.xyz
     udp: true
   - name: 🇮🇩 IKD
     server: akrab.gaaa.my.id
@@ -77,31 +77,16 @@ proxies:
     skip-cert-verify: true
     servername: id-2.vless.co
     network: ws
-    ws-opts: 
-      path: /fastssh/iked/631cbba1542d2/
-      headers: 
+    ws-opts:
+      path: /fastssh/tctctcyl/633353e213649/
+      headers:
         Host: id-2.vless.co
-    udp: true
-  - name: 🇮🇩 Nusa
-    server: akrab.gaaa.my.id
-    port: 443
-    type: vless
-    uuid: 17d5ce2d-c64e-46a6-a6c9-7e8cb8b37e9e
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id3-ws.xvless.xyz
-    network: ws
-    ws-opts: 
-      path: /websocket
-      headers: 
-        Host: id3-ws.xvless.xyz
     udp: true
   - name: 🇮🇩 Atha
     server: akrab.gaaa.my.id
     port: 443
     type: trojan
-    password: 789c03db-f1c6-4b47-9696-52a1dda3b9a0
+    password: dbcfe029-8866-470c-952f-665fed6093bb
     skip-cert-verify: true
     sni: idt3.sshocean.net
     network: ws
@@ -109,4 +94,36 @@ proxies:
       path: /websocket
       headers:
         Host: idt3.sshocean.net
+    udp: true
+  - name: 🇮🇩 SKD
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: fbe7d0c0-3430-11ed-a8bf-00163e003cdd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id-skd.indo-ssh.com
+    network: ws
+    ws-opts:
+      path: /vmessws
+      headers:
+        Host: id-skd.indo-ssh.com
+    udp: true
+  - name: 🇮🇩 IDCH
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: 14430d68-ca9f-4b70-9e67-b4e6fda69666
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: idch1.kitu.xyz
+    network: ws
+    ws-opts:
+      path: /vmess/
+      headers:
+        Host: idch1.kitu.xyz
     udp: true
