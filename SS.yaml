@@ -31,3 +31,16 @@ proxies:
       headers: 
         Host: azure01.dnstore.my.id
     udp: true
+  - name: 🇸🇬 Linode
+    server: akrab.gaaa.my.id
+    port: 443
+    type: trojan
+    password: d78e2740-4047-11ed-aa99-1239d0255272
+    skip-cert-verify: true
+    sni: trojan3.udpgw.com
+    network: ws
+    ws-opts: 
+      path: /howdy
+      headers: 
+        Host: trojan3.udpgw.com
+    udp: true
