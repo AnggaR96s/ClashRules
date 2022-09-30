@@ -34,15 +34,18 @@ proxies:
   - name: 🇸🇬 Linode
     server: akrab.gaaa.my.id
     port: 443
-    type: trojan
-    password: d78e2740-4047-11ed-aa99-1239d0255272
+    type: vmess
+    uuid: 23cc3e07-f31a-45b1-9461-41fc0fa96c28
+    alterId: 0
+    cipher: auto
+    tls: true
     skip-cert-verify: true
-    sni: trojan3.udpgw.com
+    servername: v2ray3.udpgw.com
     network: ws
     ws-opts: 
       path: /howdy
       headers: 
-        Host: trojan3.udpgw.com
+        Host: v2ray3.udpgw.com
     udp: true
   - name: 🇮🇩 BiznetGIO
     server: akrab.gaaa.my.id
