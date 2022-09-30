@@ -7,5 +7,4 @@ payload:
   - DOMAIN-SUFFIX,github.com
   - DOMAIN-SUFFIX,gitlab.com
   - DOMAIN-SUFFIX,angga.social
-  - DOMAIN-SUFFIX,workers.dev
   - PROCESS-NAME,com.termux
