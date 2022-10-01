@@ -78,7 +78,7 @@ proxies:
     servername: id-2.vless.co
     network: ws
     ws-opts:
-      path: /fastssh/tctctcyl/633353e213649/
+      path: /fastssh/gaaaid/63386e9bd4312/
       headers:
         Host: id-2.vless.co
     udp: true
