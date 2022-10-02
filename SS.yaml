@@ -1,19 +1,19 @@
 proxies:
   - name: 🇸🇬DO
     server: akrab.gaaa.my.id
-    port: 8443
+    port: 443
     type: vmess
-    uuid: bff95aab-9689-466b-8ed2-0d645c64e667
+    uuid: b0c9ddea-3ea6-4108-91cb-566c369d20c7
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: sg.gaaa.my.id
+    servername: sohowdoiapologizeandputthetearsbackinyoureyes.gaaa.my.id
     network: ws
     ws-opts:
-      path: /vmess/
+      path: /netzvmess
       headers:
-        Host: sg.gaaa.my.id
+        Host: sohowdoiapologizeandputthetearsbackinyoureyes.gaaa.my.id
     udp: true
   - name: 🇸🇬 Azure
     server: akrab.gaaa.my.id
