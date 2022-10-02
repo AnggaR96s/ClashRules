@@ -4,7 +4,6 @@ payload:
   - DOMAIN-SUFFIX,fastssh.com
   - DOMAIN-SUFFIX,sshocean.com
   - DOMAIN-SUFFIX,sshkit.com
-  - DOMAIN-SUFFIX,github.com
-  - DOMAIN-SUFFIX,gitlab.com
-  - DOMAIN-SUFFIX,angga.social
+  - DOMAIN-KEYWORD,github
+  - DOMAIN-KEYWORD,gitlab
   - PROCESS-NAME,com.termux

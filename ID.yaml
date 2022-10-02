@@ -127,3 +127,32 @@ proxies:
       headers:
         Host: idch1.kitu.xyz
     udp: true
+  - name: 🇮🇩 IKDBG
+    server: akrab.gaaa.my.id
+    port: 443
+    type: trojan
+    password: 1ea87c10-4107-11ed-b930-225401db9d57
+    skip-cert-verify: true
+    sni: id-ikd.tjvpn.org
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: id-ikd.tjvpn.org
+    udp: true
+  - name: 🇮🇩 BiznetGIO
+    server: akrab.gaaa.my.id
+    port: 443
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: idv-3.openv2ray.com
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-kmbtx
+      headers:
+        Host: idv-3.openv2ray.com
+    udp: true
